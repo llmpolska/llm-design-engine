@@ -4,8 +4,42 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 8
+    open-pull-requests-limit: 2
+    groups:
+      routine-dependencies:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+      security-dependencies:
+        applies-to: security-updates
+        patterns:
+          - '*'
+    # Major dependency upgrades cross compiler, runtime, and framework boundaries.
+    # They require an explicit, tested maintenance change rather than a bot merge.
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    open-pull-requests-limit: 2
+    groups:
+      routine-actions:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+      security-actions:
+        applies-to: security-updates
+        patterns:
+          - '*'
+    # Action majors can change runner and Node-runtime behavior; review them deliberately.
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
