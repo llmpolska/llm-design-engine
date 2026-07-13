@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ideas and design critique
+    url: https://github.com/llmpolska/llm-design-engine/discussions
+    about: Share domain-specific design experiments, provider ideas, and creative critique.
+  - name: Security report
+    url: https://github.com/llmpolska/llm-design-engine/security/advisories/new
+    about: Report vulnerabilities privately instead of opening a public issue.
