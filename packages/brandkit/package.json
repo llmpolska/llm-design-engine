@@ -1,9 +1,22 @@
 {
   "name": "@llm-design-engine/brandkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "private": true,
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit", "test": "vitest run", "lint": "eslint src" },
-  "dependencies": { "@llm-design-engine/core": "workspace:*", "@llm-design-engine/shared": "workspace:*" }
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@llm-design-engine/core": "workspace:*",
+    "@llm-design-engine/shared": "workspace:*"
+  }
 }
