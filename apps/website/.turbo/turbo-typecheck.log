@@ -1,0 +1,4 @@
+
+> @llm-design-engine/website@0.1.0 typecheck /tmp/llm-design-engine/apps/website
+> vue-tsc --noEmit
+
