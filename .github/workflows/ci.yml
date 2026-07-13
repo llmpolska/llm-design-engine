@@ -21,7 +21,10 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm typecheck
       - run: ./node_modules/.bin/eslint .
       - run: pnpm test
       - run: pnpm build
+      - run: pnpm test:e2e
+      - run: pnpm screenshots

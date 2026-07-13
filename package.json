@@ -18,6 +18,9 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "typecheck": "turbo run typecheck",
+    "lde": "node packages/cli/dist/bin.js",
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "smoke:clean": "node scripts/clean-checkout-smoke.mjs",
     "generate:website-assets": "pnpm --filter @llm-design-engine/website generate:assets",
     "changeset": "changeset",
     "release": "changeset publish"
