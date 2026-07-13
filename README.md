@@ -1,4 +1,5 @@
 # LLM Design Engine
+
 **Design before code.**
 LLM Design Engine turns product meaning into original,
 agent-executable UI direction.
@@ -24,6 +25,8 @@ The engine does not choose a theme, template, preset, component library, or clon
 ## Quick start
 
 Requirements: Node.js 22+ and pnpm 10+.
+
+> The repository is private during v0.1 hardening. The clone command below requires GitHub access until the release is published.
 
 ```bash
 git clone https://github.com/llmpolska/llm-design-engine.git
@@ -61,6 +64,28 @@ pnpm --filter @llm-design-engine/studio dev
 
 The public site is intentionally a foundry/press-mark narrative rather than a conventional AI SaaS landing page. The studio uses the same paper, kiln-black, coral, teal, mono-annotation brand system.
 
+### Verified Studio workflow
+
+The local Studio executes the fixture-backed path: brief → meaning interpretation → creative directions → scene-backed specification → deterministic preview → anti-slop report → agent export. It is not a decorative dashboard. Capture the same browser evidence with:
+
+```bash
+pnpm screenshots
+```
+
+The command starts Studio, compiles the GastroOps fixture through the visible interface, and writes the following evidence to `docs/assets/screenshots/`.
+
+| Workflow view                                          | Captured evidence                                                                                                                                                                                                                                                         |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project overview and brief editor                      | [`studio-overview.png`](docs/assets/screenshots/studio-overview.png) · [`studio-brief.png`](docs/assets/screenshots/studio-brief.png)                                                                                                                                     |
+| Source-derived creative directions and comparison      | [`studio-directions.png`](docs/assets/screenshots/studio-directions.png) · [`studio-comparison.png`](docs/assets/screenshots/studio-comparison.png)                                                                                                                       |
+| Scene-backed design specification and rendered preview | [`studio-specification.png`](docs/assets/screenshots/studio-specification.png) · [`studio-preview-desktop.png`](docs/assets/screenshots/studio-preview-desktop.png)                                                                                                       |
+| Brandkit, assets, anti-slop report, and export package | [`studio-brandkit.png`](docs/assets/screenshots/studio-brandkit.png) · [`studio-assets.png`](docs/assets/screenshots/studio-assets.png) · [`studio-lint.png`](docs/assets/screenshots/studio-lint.png) · [`studio-export.png`](docs/assets/screenshots/studio-export.png) |
+| Mobile deterministic preview                           | [`studio-preview-mobile.png`](docs/assets/screenshots/studio-preview-mobile.png)                                                                                                                                                                                          |
+
+![GastroOps Studio creative directions](docs/assets/screenshots/studio-directions.png)
+
+![GastroOps Studio deterministic preview](docs/assets/screenshots/studio-preview-desktop.png)
+
 ## GastroOps before and after
 
 **Before:** “Build a modern restaurant operations dashboard.” The phrase leaves product meaning, material language, hierarchy, and interaction behavior implicit.
@@ -97,33 +122,40 @@ route: /
 concept: professional-kitchen-control-room
 status: approved
 ---
+
 # Narrative
+
 Steel worktops and ticket rails make the next handoff visible.
+
 # Composition
+
 ## Hero
+
 - height: 76svh
 - focal-point: the pass surface
 - heading-alignment: bottom-left
+
 # Avoid
+
 - purple gradients
 - generic dashboard mockups
 ```
 
 ## Architecture
 
-| Package | Responsibility |
-| --- | --- |
-| `core` | Project brief, interpretation, direction, design AST, brandkit, asset, and lint contracts |
-| `design-format` | Zod validation plus Markdown frontmatter/parser/serializer |
-| `creative-director` | Mock and OpenAI-compatible reasoning providers |
-| `renderer` | Deterministic HTML/CSS/SVG preview output |
-| `brandkit` | Structured identity systems, tokens, press marks, image prompts |
-| `image-provider` | Disabled/mock and OpenAI-compatible image adapters |
-| `anti-slop` | Deterministic generic-pattern warnings and score |
-| `repo-scanner` | Extension point for future visual implementation verification |
-| `cli` | `lde` commands and local Hono API |
-| `apps/studio` | Local Vue design review surface |
-| `apps/website` | Public product narrative and brand showcase |
+| Package             | Responsibility                                                                            |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| `core`              | Project brief, interpretation, direction, design AST, brandkit, asset, and lint contracts |
+| `design-format`     | Zod validation plus Markdown frontmatter/parser/serializer                                |
+| `creative-director` | Mock and OpenAI-compatible reasoning providers                                            |
+| `renderer`          | Deterministic HTML/CSS/SVG preview output                                                 |
+| `brandkit`          | Structured identity systems, tokens, press marks, image prompts                           |
+| `image-provider`    | Disabled/mock and OpenAI-compatible image adapters                                        |
+| `anti-slop`         | Deterministic generic-pattern warnings and score                                          |
+| `repo-scanner`      | Extension point for future visual implementation verification                             |
+| `cli`               | `lde` commands and local Hono API                                                         |
+| `apps/studio`       | Local Vue design review surface                                                           |
+| `apps/website`      | Public product narrative and brand showcase                                               |
 
 Read [`docs/architecture.md`](docs/architecture.md) and [`docs/creative-pipeline.md`](docs/creative-pipeline.md).
 

@@ -1,5 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "useDefineForClassFields": true, "allowJs": false, "jsx": "preserve", "noEmit": true, "types": ["vite/client"] },
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "allowJs": false,
+    "jsx": "preserve",
+    "noEmit": true,
+    "types": ["vite/client"]
+  },
   "include": ["src/**/*.ts", "src/**/*.vue", "vite.config.ts"]
 }
