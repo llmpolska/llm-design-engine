@@ -16,11 +16,12 @@ export default tseslint.config(
     ],
   },
   {
-    files: ['tests/e2e/**/*.mjs'],
+    files: ['tests/**/*.mjs'],
     languageOptions: {
       globals: {
         console: 'readonly',
         process: 'readonly',
+        URL: 'readonly',
       },
     },
   },

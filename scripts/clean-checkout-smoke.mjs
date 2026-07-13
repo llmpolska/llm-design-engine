@@ -28,10 +28,9 @@ await cp(source, destination, {
 
 try {
   const commands = [
-    ['pnpm', ['install', '--frozen-lockfile']],
+    ['pnpm', ['run', 'setup']],
     ['pnpm', ['typecheck']],
     ['pnpm', ['test']],
-    ['pnpm', ['build']],
     ['pnpm', ['lde', '--help']],
   ];
   for (const [command, args] of commands) {

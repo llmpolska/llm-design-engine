@@ -9,7 +9,7 @@ Make the GitHub README the shortest truthful path from a first visit to a workin
 Use a layered README rather than a linear manual:
 
 1. State the product and its anti-template philosophy in the opening screen.
-2. Provide one verified, cross-platform `pnpm setup` command as the first installation action.
+2. Provide one verified, cross-platform `pnpm run setup` command as the first installation action; `pnpm setup` is a reserved pnpm command that mutates shell configuration.
 3. Offer three clearly separated entry points: Studio GUI, CLI, and MCP.
 4. State operating-mode boundaries before detailed instructions: deterministic local/mock mode works without credentials; provider-backed reasoning and image generation require explicit configuration; the included Studio GastroOps journey is a reproducible fixture.
 5. Use two inline Studio screenshots as evidence, with the complete gallery linked rather than embedded.
@@ -33,7 +33,7 @@ The quick start must not use an invalid relative path to the CLI. It must use th
 
 ## Setup Script
 
-Add a Node-based, cross-platform `scripts/setup.mjs` and a root `pnpm setup` command.
+Add a Node-based, cross-platform `scripts/setup.mjs` and a root `pnpm run setup` command.
 
 ### Contract
 
@@ -48,7 +48,7 @@ Add a Node-based, cross-platform `scripts/setup.mjs` and a root `pnpm setup` com
 
 - Unit-test setup command construction and Node version validation without installing dependencies or building the workspace.
 - Add an onboarding documentation test that checks the public README contains:
-  - `pnpm setup`,
+  - `pnpm run setup`,
   - frozen-lockfile installation,
   - all three entry paths,
   - a clear local/mock versus provider-backed explanation,
