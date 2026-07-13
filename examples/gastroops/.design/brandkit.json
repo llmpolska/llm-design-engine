@@ -1,0 +1,175 @@
+{
+  "projectId": "gastroops",
+  "narrative": "gastroops speaks through a kitchen control room at the pass. The identity turns blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops into a readable system of marks and handoffs.",
+  "personality": [
+    "observant",
+    "precise",
+    "warm under pressure",
+    "resourceful"
+  ],
+  "toneOfVoice": [
+    "concrete over clever",
+    "calm when the room accelerates",
+    "specific about next actions",
+    "never inflated"
+  ],
+  "namingRationale": "gastroops keeps the domain signal visible and pairs it with a name that sounds useful in a real handoff.",
+  "logoDirection": "A press mark: two registration brackets clamp a single cut line, suggesting meaning becoming executable form.",
+  "wordmarkDirection": "Compact uppercase wordmark with a deliberate gap between the domain name and its instrument suffix.",
+  "symbolDirection": "Offset brackets and a cut line; no sparkle, wand, robot, brain, or infinity symbol.",
+  "colors": [
+    {
+      "name": "paper",
+      "hex": "#f3efe7",
+      "role": "quiet base and generous negative space"
+    },
+    {
+      "name": "kiln",
+      "hex": "#171716",
+      "role": "ink, headings, structural anchor"
+    },
+    {
+      "name": "carbon",
+      "hex": "#2b2b27",
+      "role": "long-form text and working surfaces"
+    },
+    {
+      "name": "accent",
+      "hex": "#d06b4b",
+      "role": "one signal, action, or route marker"
+    },
+    {
+      "name": "mineral",
+      "hex": "#2f7770",
+      "role": "secondary registration and supportive context"
+    },
+    {
+      "name": "muted",
+      "hex": "#d9d0c2",
+      "role": "rules, paper folds, disabled context"
+    }
+  ],
+  "typography": [
+    {
+      "role": "display",
+      "family": "Arial Narrow / Trebuchet MS",
+      "usage": "short high-contrast headlines and route names"
+    },
+    {
+      "role": "body",
+      "family": "Trebuchet MS / system sans-serif",
+      "usage": "explanations, labels, and instructions"
+    },
+    {
+      "role": "mono",
+      "family": "ui-monospace",
+      "usage": "metadata, measurements, command output, annotations"
+    }
+  ],
+  "spacingPrinciples": [
+    "Use wide margins as a creative pause.",
+    "Align annotations to a visible route or fold.",
+    "Keep one working surface dominant per section.",
+    "Use 8px as a unit but break the grid when meaning requires it."
+  ],
+  "shapeLanguage": [
+    "registration brackets",
+    "short rules",
+    "paper tabs",
+    "square corners with rare functional rounding",
+    "offset underlines"
+  ],
+  "iconographyDirection": "Thin-line operational marks drawn from domain tools, never decorative emoji or stock icon sets.",
+  "illustrationDirection": "Editorial diagrams, plotter lines, material crops, and annotated artifacts with one focal action.",
+  "photographyDirection": "Honest close textures and domain objects, directional light, no staged startup desks or generic devices.",
+  "motionPrinciples": [
+    "marks draw in like a plotter",
+    "annotations follow their anchor",
+    "transitions feel measured rather than bouncy",
+    "reduced motion leaves a clear final state"
+  ],
+  "faviconConcept": "The compact press mark: two brackets around one cut line in kiln ink and coral.",
+  "socialPreviewConcept": "A paper title plate with a single route line crossing the mark and project name.",
+  "imagePrompts": [
+    {
+      "id": "gastroops-hero-art",
+      "role": "hero artwork",
+      "prompt": "Tactile editorial material study for a kitchen control room at the pass; blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops; one clear focal object; photographed like a working artifact",
+      "negativeConstraints": [
+        "stock photo",
+        "generic SaaS UI",
+        "purple gradient",
+        "robot",
+        "floating glass"
+      ],
+      "aspectRatio": "16:10",
+      "intendedPlacement": "landing hero",
+      "generatedFile": "assets/hero-art.svg",
+      "provider": "mock",
+      "model": "deterministic-svg",
+      "generatedAt": "2026-07-13T10:42:29.663Z"
+    },
+    {
+      "id": "gastroops-blueprint-art",
+      "role": "meaning to blueprint illustration",
+      "prompt": "A sequence of annotated marks compressing Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates. into an executable blueprint; paper, plotter ink, registration brackets",
+      "negativeConstraints": [
+        "abstract blob",
+        "neon circuit board",
+        "unrelated stock imagery"
+      ],
+      "aspectRatio": "4:3",
+      "intendedPlacement": "process section",
+      "generatedFile": "assets/blueprint-art.svg",
+      "provider": "mock",
+      "model": "deterministic-svg",
+      "generatedAt": "2026-07-13T10:42:29.663Z"
+    },
+    {
+      "id": "gastroops-material-study",
+      "role": "material study",
+      "prompt": "Close crop of blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops arranged as domain evidence for Professional Kitchen Control Room; high contrast, honest texture",
+      "negativeConstraints": [
+        "3D render",
+        "generic device mockup",
+        "glow"
+      ],
+      "aspectRatio": "3:2",
+      "intendedPlacement": "direction detail",
+      "generatedFile": "assets/material-study.svg",
+      "provider": "mock",
+      "model": "deterministic-svg",
+      "generatedAt": "2026-07-13T10:42:29.663Z"
+    },
+    {
+      "id": "gastroops-social-preview",
+      "role": "social preview",
+      "prompt": "Editorial title plate for gastroops using the a kitchen control room at the pass visual language; readable mark, paper and ink, no UI screenshot",
+      "negativeConstraints": [
+        "stock image",
+        "generic AI imagery",
+        "purple cloud"
+      ],
+      "aspectRatio": "1.91:1",
+      "intendedPlacement": "Open Graph image",
+      "generatedFile": "assets/social-preview.svg",
+      "provider": "mock",
+      "model": "deterministic-svg",
+      "generatedAt": "2026-07-13T10:42:29.663Z"
+    }
+  ],
+  "usageRules": [
+    "Keep one accent color dominant.",
+    "Pair every visual decision with a domain reason.",
+    "Use the mark as a registration device, not a decoration.",
+    "Let text and material share the same compositional route."
+  ],
+  "misuseRules": [
+    "Do not add purple gradients or neon glows.",
+    "Do not turn every section into a rounded card.",
+    "Do not center every heading by default.",
+    "Do not use stock photos, generic dashboard mockups, or abstract blobs.",
+    "Do not recreate the mark as a sparkle, wand, robot, brain, or infinity loop."
+  ],
+  "generatedAt": "2026-07-13T10:42:29.663Z"
+}

@@ -1,0 +1,37 @@
+{
+  "score": 47,
+  "warnings": [
+    {
+      "rule": "unexplained-gradient",
+      "severity": "error",
+      "message": "Accent gradient is not explained by the visual language.",
+      "evidence": "gradients, gradients\", gradients\""
+    },
+    {
+      "rule": "glassmorphism",
+      "severity": "error",
+      "message": "Glassmorphism appears as a default surface treatment.",
+      "evidence": "glassmorphism, glassmorphism"
+    },
+    {
+      "rule": "abstract-blob",
+      "severity": "warning",
+      "message": "Meaningless abstract blob detected.",
+      "evidence": "abstract blob, abstract blob"
+    },
+    {
+      "rule": "generic-mockup",
+      "severity": "error",
+      "message": "Generic device or dashboard mockup is doing the narrative work.",
+      "evidence": "dashboard mockup, dashboard mockup"
+    },
+    {
+      "rule": "stock-imagery",
+      "severity": "warning",
+      "message": "Random stock imagery is not tied to the approved direction.",
+      "evidence": "A tactile study of blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops arranged around a kitchen control room at the pass; no UI, no text"
+    }
+  ],
+  "checkedAt": "2026-07-13T10:42:30.034Z",
+  "ruleset": "lde-anti-slop-1"
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "projectId": null,
+  "artifacts": [
+    "BRIEF.md",
+    "DIRECTIONS.md",
+    "BRAND.md",
+    "pages/landing.design.md",
+    "brandkit.json",
+    "previews/landing.html",
+    "EXPORT.md"
+  ]
+}

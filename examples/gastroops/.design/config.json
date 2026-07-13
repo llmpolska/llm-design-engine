@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "provider": "mock",
+  "preview": {
+    "port": 4317
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "gastroops-hero-art",
+    "role": "hero artwork",
+    "file": "assets/placeholder-gastroops-hero-art.svg",
+    "prompt": "Tactile editorial material study for a kitchen control room at the pass; blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops; one clear focal object; photographed like a working artifact",
+    "negativeConstraints": [
+      "stock photo",
+      "generic SaaS UI",
+      "purple gradient",
+      "robot",
+      "floating glass"
+    ],
+    "aspectRatio": "16:10",
+    "intendedPlacement": "landing hero",
+    "provider": "disabled",
+    "model": "placeholder",
+    "generatedAt": "2026-07-13T10:42:29.664Z",
+    "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 960 600\"><rect width=\"960\" height=\"600\" fill=\"#e8e1d6\"/><path d=\"M80 120h220M80 150h140M80 480h800\" stroke=\"#171716\" stroke-width=\"8\"/><path d=\"M580 90v420M580 90h220M580 510h220\" fill=\"none\" stroke=\"#8a7a67\" stroke-width=\"8\"/><circle cx=\"580\" cy=\"300\" r=\"36\" fill=\"#8a7a67\"/><text x=\"80\" y=\"390\" font-family=\"monospace\" font-size=\"28\" fill=\"#171716\">hero artwork</text></svg>"
+  },
+  {
+    "id": "gastroops-blueprint-art",
+    "role": "meaning to blueprint illustration",
+    "file": "assets/placeholder-gastroops-blueprint-art.svg",
+    "prompt": "A sequence of annotated marks compressing Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates. into an executable blueprint; paper, plotter ink, registration brackets",
+    "negativeConstraints": [
+      "abstract blob",
+      "neon circuit board",
+      "unrelated stock imagery"
+    ],
+    "aspectRatio": "4:3",
+    "intendedPlacement": "process section",
+    "provider": "disabled",
+    "model": "placeholder",
+    "generatedAt": "2026-07-13T10:42:29.664Z",
+    "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 960 600\"><rect width=\"960\" height=\"600\" fill=\"#e8e1d6\"/><path d=\"M80 120h220M80 150h140M80 480h800\" stroke=\"#171716\" stroke-width=\"8\"/><path d=\"M580 90v420M580 90h220M580 510h220\" fill=\"none\" stroke=\"#8a7a67\" stroke-width=\"8\"/><circle cx=\"580\" cy=\"300\" r=\"36\" fill=\"#8a7a67\"/><text x=\"80\" y=\"390\" font-family=\"monospace\" font-size=\"28\" fill=\"#171716\">meaning to blueprint illustr</text></svg>"
+  },
+  {
+    "id": "gastroops-material-study",
+    "role": "material study",
+    "file": "assets/placeholder-gastroops-material-study.svg",
+    "prompt": "Close crop of blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops arranged as domain evidence for Professional Kitchen Control Room; high contrast, honest texture",
+    "negativeConstraints": [
+      "3D render",
+      "generic device mockup",
+      "glow"
+    ],
+    "aspectRatio": "3:2",
+    "intendedPlacement": "direction detail",
+    "provider": "disabled",
+    "model": "placeholder",
+    "generatedAt": "2026-07-13T10:42:29.664Z",
+    "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 960 600\"><rect width=\"960\" height=\"600\" fill=\"#e8e1d6\"/><path d=\"M80 120h220M80 150h140M80 480h800\" stroke=\"#171716\" stroke-width=\"8\"/><path d=\"M580 90v420M580 90h220M580 510h220\" fill=\"none\" stroke=\"#8a7a67\" stroke-width=\"8\"/><circle cx=\"580\" cy=\"300\" r=\"36\" fill=\"#8a7a67\"/><text x=\"80\" y=\"390\" font-family=\"monospace\" font-size=\"28\" fill=\"#171716\">material study</text></svg>"
+  },
+  {
+    "id": "gastroops-social-preview",
+    "role": "social preview",
+    "file": "assets/placeholder-gastroops-social-preview.svg",
+    "prompt": "Editorial title plate for gastroops using the a kitchen control room at the pass visual language; readable mark, paper and ink, no UI screenshot",
+    "negativeConstraints": [
+      "stock image",
+      "generic AI imagery",
+      "purple cloud"
+    ],
+    "aspectRatio": "1.91:1",
+    "intendedPlacement": "Open Graph image",
+    "provider": "disabled",
+    "model": "placeholder",
+    "generatedAt": "2026-07-13T10:42:29.664Z",
+    "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 960 600\"><rect width=\"960\" height=\"600\" fill=\"#e8e1d6\"/><path d=\"M80 120h220M80 150h140M80 480h800\" stroke=\"#171716\" stroke-width=\"8\"/><path d=\"M580 90v420M580 90h220M580 510h220\" fill=\"none\" stroke=\"#8a7a67\" stroke-width=\"8\"/><circle cx=\"580\" cy=\"300\" r=\"36\" fill=\"#8a7a67\"/><text x=\"80\" y=\"390\" font-family=\"monospace\" font-size=\"28\" fill=\"#171716\">social preview</text></svg>"
+  }
+]
