@@ -1,0 +1,22 @@
+{
+  "name": "@llm-design-engine/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "bin": { "lde": "dist/bin.js" },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": { "build": "tsc -p tsconfig.json && node scripts/chmod-bin.mjs", "typecheck": "tsc -p tsconfig.json --noEmit", "test": "vitest run", "lint": "eslint src" },
+  "dependencies": {
+    "@hono/node-server": "^1.14.4",
+    "@llm-design-engine/anti-slop": "workspace:*",
+    "@llm-design-engine/brandkit": "workspace:*",
+    "@llm-design-engine/core": "workspace:*",
+    "@llm-design-engine/creative-director": "workspace:*",
+    "@llm-design-engine/design-format": "workspace:*",
+    "@llm-design-engine/image-provider": "workspace:*",
+    "@llm-design-engine/renderer": "workspace:*",
+    "@llm-design-engine/shared": "workspace:*",
+    "commander": "^14.0.0",
+    "hono": "^4.7.11"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "llm-design-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Creative director and design compiler for coding agents.",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "turbo run test",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "typecheck": "turbo run typecheck",
+    "generate:website-assets": "pnpm --filter @llm-design-engine/website generate:assets",
+    "changeset": "changeset",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@eslint/js": "^9.29.0",
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^22.15.30",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "typescript-eslint": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.29.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "zod": "^3.25.67"
+  }
+}
