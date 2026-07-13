@@ -1,6 +1,11 @@
 #!/usr/bin/env node
-import { createProgram } from './index.js';
+import { createProgram, runCommand } from './index.js';
 
-const output: string[] = [];
-const program = createProgram({ cwd: process.cwd(), output });
-await program.parseAsync(process.argv);
+const argv = process.argv.slice(2);
+if (argv.includes('--help') || argv.includes('-h') || argv.length === 0) {
+  await createProgram({ cwd: process.cwd(), output: [] }).parseAsync(process.argv);
+} else {
+  const output: string[] = [];
+  await runCommand(argv, { cwd: process.cwd(), output });
+  for (const line of output) console.log(line);
+}
