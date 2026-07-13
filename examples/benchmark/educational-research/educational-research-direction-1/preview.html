@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>study as a route through sources preview</title>
+    <style>
+      :root {
+        --surface: hsl(348 28% 12%);
+        --ink: hsl(349 28% 92%);
+        --accent: hsl(29 28% 92%);
+        --muted: hsl(350 28% 12%);
+        --font-display: 'compressed editorial display';
+        --font-body: 'plain operational sans';
+        --font-mono: 'legible technical mono';
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--surface);
+        color: var(--ink);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+      }
+      .preview-shell {
+        min-height: 100vh;
+        padding: 24px;
+      }
+      .scene {
+        position: relative;
+        max-width: 1440px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: var(--surface);
+        aspect-ratio: 1200/760;
+      }
+      .scene-node {
+        position: absolute;
+      }
+      .scene-frame {
+        overflow: hidden;
+      }
+      .scene-line {
+        height: 0;
+      }
+      .scene-metric {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-family: var(--font-mono);
+      }
+      .scene-metric strong {
+        font-size: 32px;
+      }
+      .scene-metric span,
+      .scene-metric em {
+        font-size: 12px;
+      }
+      .scene-annotation {
+        font-family: var(--font-mono);
+        font-size: 14px;
+        line-height: 1.45;
+        padding: 12px;
+        border-left: 2px solid var(--accent);
+      }
+      .scene-image {
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        font-family: var(--font-mono);
+        border: 1px dashed var(--accent);
+      }
+      @media (max-width: 720px) {
+        .preview-shell {
+          padding: 12px;
+        }
+        .scene {
+          min-height: 600px;
+          aspect-ratio: auto;
+          transform-origin: top left;
+          scale: 0.7;
+          margin-bottom: -180px;
+        }
+        .scene-node {
+          max-width: 90%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section
+        class="scene"
+        data-design="educational-research-direction-1-design"
+        aria-label="Study enters as context, concentrates around organize, then resolves through an explicit next action. This direction gives study the first move and sources the proof."
+      >
+        <div
+          class="scene-node scene-frame"
+          data-node="educational-research-direction-1-field"
+          style="left: 0px; top: 0px; width: 1200px; height: 760px; background: hsl(348 28% 12%)"
+        ></div>
+        <div
+          class="scene-node scene-text"
+          data-node="educational-research-direction-1-title"
+          style="
+            left: 72px;
+            top: 76px;
+            width: 630px;
+            height: 104px;
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 600;
+            color: hsl(349 28% 92%);
+            text-align: start;
+          "
+        >
+          Study / Sources 1
+        </div>
+        <div
+          class="scene-node scene-text"
+          data-node="educational-research-direction-1-metaphor"
+          style="
+            left: 72px;
+            top: 210px;
+            width: 480px;
+            height: 72px;
+            font-family: var(--font-body);
+            font-size: 22px;
+            font-weight: 400;
+            color: hsl(349 28% 92%);
+            text-align: start;
+          "
+        >
+          study as a route through sources
+        </div>
+        <div
+          class="scene-node scene-line"
+          data-node="educational-research-direction-1-trace"
+          style="left: 72px; top: 342px; width: 860px; border-top: 3px solid hsl(349 28% 92%)"
+        ></div>
+        <div
+          class="scene-node scene-frame"
+          data-node="educational-research-entry-0"
+          style="
+            left: 72px;
+            top: 390px;
+            width: 960px;
+            height: 76px;
+            background: hsl(349 28% 92%);
+            border: 1px solid hsl(349 28% 92%);
+            border-radius: 3px;
+          "
+        ></div>
+        <div
+          class="scene-node scene-text"
+          data-node="educational-research-entry-0-label"
+          style="
+            left: 96px;
+            top: 412px;
+            width: 560px;
+            height: 30px;
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: hsl(348 28% 12%);
+            text-align: start;
+          "
+        >
+          Study entry · study
+        </div>
+        <div
+          class="scene-node scene-frame"
+          data-node="educational-research-action-0"
+          style="
+            left: 110px;
+            top: 496px;
+            width: 884px;
+            height: 76px;
+            background: hsl(348 28% 12%);
+            border: 1px solid hsl(349 28% 92%);
+          "
+        ></div>
+        <div
+          class="scene-node scene-text"
+          data-node="educational-research-action-0-label"
+          style="
+            left: 134px;
+            top: 518px;
+            width: 560px;
+            height: 30px;
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: hsl(349 28% 92%);
+            text-align: start;
+          "
+        >
+          Compare lane · compare
+        </div>
+        <div
+          class="scene-node scene-frame"
+          data-node="educational-research-context-0"
+          style="
+            left: 72px;
+            top: 602px;
+            width: 960px;
+            height: 76px;
+            background: hsl(349 28% 92%);
+            border: 1px solid hsl(349 28% 92%);
+            border-radius: 3px;
+          "
+        ></div>
+        <div
+          class="scene-node scene-text"
+          data-node="educational-research-context-0-label"
+          style="
+            left: 96px;
+            top: 624px;
+            width: 560px;
+            height: 30px;
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: hsl(348 28% 12%);
+            text-align: start;
+          "
+        >
+          Organize context · organize
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

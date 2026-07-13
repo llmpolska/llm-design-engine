@@ -1,0 +1,883 @@
+---
+id: developer-infrastructure-direction-1-design
+route: /
+concept: deploy as a route through deploy
+status: draft
+---
+
+# Narrative
+
+Deploy enters as context, concentrates around make, then resolves through an explicit next action. This direction gives deploy the first move and deploy the proof.
+
+# Composition
+
+## Deploy entry
+
+- id: developer-infrastructure-entry-0
+- height: min(82svh, 760px)
+- layout: horizontal reading path
+- focal-point: deploy
+- alignment: start
+- Start with Decide what is safe to change under pressure
+- Anchor the first read to deploy
+
+## Trace lane
+
+- id: developer-infrastructure-action-0
+- height: min(82svh, 760px)
+- layout: anchored action surface
+- focal-point: trace
+- alignment: start
+- Make trace the dominant transition
+- Keep adjacent context visible
+
+## Make context
+
+- id: developer-infrastructure-context-0
+- height: min(82svh, 760px)
+- layout: evidence shelf
+- focal-point: make
+- alignment: start
+- Show relationships around make
+- Use detail as evidence, not decoration
+
+# Visual language
+
+- marked deploy surfaces
+- deploy marks
+- make surfaces
+- trace traces
+- keyword: deploy as a route through deploy
+- keyword: route
+- keyword: a lateral route with one dominant turn
+- keyword: make
+- keyword: deploy
+
+# Avoid
+
+- unrelated decorative gradients
+- generic dashboard mockups
+- feature-card grids
+- floating glass panels
+- abstract blobs
+
+<!-- lde-data
+{
+  "id": "developer-infrastructure-direction-1-design",
+  "route": "/",
+  "concept": "deploy as a route through deploy",
+  "status": "draft",
+  "directionId": "developer-infrastructure-direction-1",
+  "narrative": "Deploy enters as context, concentrates around make, then resolves through an explicit next action. This direction gives deploy the first move and deploy the proof.",
+  "composition": {
+    "sections": [
+      {
+        "id": "developer-infrastructure-entry-0",
+        "title": "Deploy entry",
+        "height": "min(82svh, 760px)",
+        "layout": "horizontal reading path",
+        "focalPoint": "deploy",
+        "alignment": "start",
+        "rules": [
+          "Start with Decide what is safe to change under pressure",
+          "Anchor the first read to deploy"
+        ]
+      },
+      {
+        "id": "developer-infrastructure-action-0",
+        "title": "Trace lane",
+        "height": "min(82svh, 760px)",
+        "layout": "anchored action surface",
+        "focalPoint": "trace",
+        "alignment": "start",
+        "rules": [
+          "Make trace the dominant transition",
+          "Keep adjacent context visible"
+        ]
+      },
+      {
+        "id": "developer-infrastructure-context-0",
+        "title": "Make context",
+        "height": "min(82svh, 760px)",
+        "layout": "evidence shelf",
+        "focalPoint": "make",
+        "alignment": "start",
+        "rules": [
+          "Show relationships around make",
+          "Use detail as evidence, not decoration"
+        ]
+      }
+    ]
+  },
+  "visualLanguage": {
+    "materials": [
+      "marked deploy surfaces",
+      "deploy marks",
+      "make surfaces",
+      "trace traces"
+    ],
+    "keywords": [
+      "deploy as a route through deploy",
+      "route",
+      "a lateral route with one dominant turn",
+      "make",
+      "deploy"
+    ]
+  },
+  "typography": {
+    "display": "compressed editorial display",
+    "body": "plain operational sans",
+    "mono": "legible technical mono"
+  },
+  "colors": {
+    "background": "hsl(237 28% 12%)",
+    "foreground": "hsl(238 28% 92%)",
+    "accent": "hsl(278 28% 92%)",
+    "muted": "hsl(239 28% 12%)",
+    "secondary": "hsl(320 28% 92%)"
+  },
+  "responsive": {
+    "mobile": [
+      "desktop keeps the reading path lateral",
+      "tablet reduces overlap before reducing type",
+      "mobile stacks by action order and preserves source labels"
+    ],
+    "tablet": [
+      "desktop keeps the reading path lateral",
+      "tablet reduces overlap before reducing type",
+      "mobile stacks by action order and preserves source labels"
+    ],
+    "desktop": [
+      "desktop keeps the reading path lateral",
+      "tablet reduces overlap before reducing type",
+      "mobile stacks by action order and preserves source labels"
+    ]
+  },
+  "scene": {
+    "width": 1200,
+    "height": 760,
+    "nodes": [
+      {
+        "id": "developer-infrastructure-direction-1-field",
+        "kind": "frame",
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 760,
+        "fill": "hsl(237 28% 12%)",
+        "children": []
+      },
+      {
+        "id": "developer-infrastructure-direction-1-title",
+        "kind": "text",
+        "x": 72,
+        "y": 76,
+        "width": 630,
+        "height": 104,
+        "role": "hero-title",
+        "text": "Deploy / Deploy 1",
+        "fontRole": "display",
+        "size": 56,
+        "weight": 600,
+        "color": "hsl(238 28% 92%)"
+      },
+      {
+        "id": "developer-infrastructure-direction-1-metaphor",
+        "kind": "text",
+        "x": 72,
+        "y": 210,
+        "width": 480,
+        "height": 72,
+        "role": "metaphor",
+        "text": "deploy as a route through deploy",
+        "fontRole": "body",
+        "size": 22,
+        "weight": 400,
+        "color": "hsl(238 28% 92%)"
+      },
+      {
+        "id": "developer-infrastructure-direction-1-trace",
+        "kind": "line",
+        "x": 72,
+        "y": 342,
+        "width": 760,
+        "height": 0,
+        "role": "reading-path",
+        "x2": 932,
+        "y2": 342,
+        "stroke": "hsl(238 28% 92%)",
+        "strokeWidth": 3
+      },
+      {
+        "id": "developer-infrastructure-entry-0",
+        "kind": "frame",
+        "x": 72,
+        "y": 390,
+        "width": 960,
+        "height": 76,
+        "role": "horizontal reading path",
+        "fill": "hsl(238 28% 92%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 3,
+        "children": []
+      },
+      {
+        "id": "developer-infrastructure-entry-0-label",
+        "kind": "text",
+        "x": 96,
+        "y": 412,
+        "width": 560,
+        "height": 30,
+        "role": "section-label",
+        "text": "Deploy entry · deploy",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(237 28% 12%)"
+      },
+      {
+        "id": "developer-infrastructure-action-0",
+        "kind": "frame",
+        "x": 110,
+        "y": 496,
+        "width": 884,
+        "height": 76,
+        "role": "anchored action surface",
+        "fill": "hsl(237 28% 12%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 0,
+        "children": []
+      },
+      {
+        "id": "developer-infrastructure-action-0-label",
+        "kind": "text",
+        "x": 134,
+        "y": 518,
+        "width": 560,
+        "height": 30,
+        "role": "section-label",
+        "text": "Trace lane · trace",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(238 28% 92%)"
+      },
+      {
+        "id": "developer-infrastructure-context-0",
+        "kind": "frame",
+        "x": 72,
+        "y": 602,
+        "width": 960,
+        "height": 76,
+        "role": "evidence shelf",
+        "fill": "hsl(238 28% 92%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 3,
+        "children": []
+      },
+      {
+        "id": "developer-infrastructure-context-0-label",
+        "kind": "text",
+        "x": 96,
+        "y": 624,
+        "width": 560,
+        "height": 30,
+        "role": "section-label",
+        "text": "Make context · make",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(237 28% 12%)"
+      }
+    ]
+  },
+  "motion": {
+    "principles": [
+      "trace changes the reading path",
+      "hover/focus reveals evidence in place",
+      "reduced motion preserves the same hierarchy"
+    ],
+    "reducedMotion": [
+      "preserve order and emphasis without movement"
+    ]
+  },
+  "assets": [],
+  "forbiddenPatterns": [
+    "unrelated decorative gradients",
+    "generic dashboard mockups",
+    "feature-card grids",
+    "floating glass panels",
+    "abstract blobs"
+  ],
+  "agentInstructions": [
+    "Keep the deploy as a route through deploy identity intact.",
+    "Build the route opening before adding supporting details.",
+    "Use deploy, make, health as domain-specific evidence.",
+    "Do not introduce generic SaaS cards, unrelated gradients, or invented imagery."
+  ],
+  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "meaning": {
+    "briefId": "developer-infrastructure",
+    "productDomain": "developer infrastructure",
+    "userTension": "Decide what is safe to change under pressure",
+    "emotionalTarget": "calm agency while trace accelerates",
+    "domainObjects": [
+      "make",
+      "deploy",
+      "health",
+      "ownership",
+      "rollback",
+      "field",
+      "developer"
+    ],
+    "domainMaterials": [
+      "deploy marks",
+      "make surfaces",
+      "trace traces"
+    ],
+    "centralMetaphor": "deploy as a readable field where make moves through a sequence",
+    "visualNarrative": "Deploy enters as context, concentrates around make, then resolves through an explicit next action.",
+    "visualKeywords": [
+      "deploy",
+      "make",
+      "trace",
+      "deploys",
+      "recover",
+      "sequence",
+      "signal"
+    ],
+    "patternsToAvoid": [
+      "unrelated decorative gradients",
+      "generic dashboard mockups",
+      "feature-card grids",
+      "floating glass panels",
+      "abstract blobs"
+    ],
+    "businessObjective": "Make deploy health, ownership, and rollback evidence legible across a changing infrastructure.",
+    "operationalVerbs": [
+      "trace",
+      "deploys",
+      "recover",
+      "incidents",
+      "decide",
+      "what",
+      "safe",
+      "change",
+      "pressure"
+    ],
+    "userJourney": [
+      "orient",
+      "trace",
+      "deploys",
+      "recover",
+      "confirm"
+    ],
+    "temporalBehavior": [
+      "orient before action",
+      "surface change as a trace",
+      "close the loop with confirmation"
+    ],
+    "informationHierarchy": [
+      "make",
+      "deploy",
+      "next action",
+      "recovery state"
+    ],
+    "entityRelationships": [
+      "make relates to deploy",
+      "deploy relates to health",
+      "health relates to ownership",
+      "ownership relates to rollback"
+    ],
+    "evidence": [
+      {
+        "source": "domain",
+        "input": "developer infrastructure",
+        "conclusion": "The product operates in developer infrastructure.",
+        "consequence": "The interface must expose deploy as an active context."
+      },
+      {
+        "source": "summary",
+        "input": "Make deploy health, ownership, and rollback evidence legible across a changing infrastructure.",
+        "conclusion": "The work centers on make, deploy, health.",
+        "consequence": "The visual system must privilege those objects over generic interface chrome."
+      },
+      {
+        "source": "tension",
+        "input": "Decide what is safe to change under pressure",
+        "conclusion": "The user tension is Decide what is safe to change under pressure.",
+        "consequence": "The first read must make the critical decision legible before secondary detail."
+      },
+      {
+        "source": "jobs",
+        "input": "trace deploys, recover incidents",
+        "conclusion": "Users repeatedly trace, deploys, recover.",
+        "consequence": "Composition should read as a sequence of actions, not a feature inventory."
+      }
+    ]
+  },
+  "hypothesis": {
+    "id": "developer-infrastructure-hypothesis-1",
+    "statement": "Deploy becomes the visual behavior for Decide what is safe to change under pressure; deploy proves each transition.",
+    "visualMetaphor": "deploy as a route through deploy",
+    "emotionalBehavior": "The interface moves from calm agency while trace accelerates to a clear recover.",
+    "spatialStrategy": "a lateral route with one dominant turn",
+    "focalStrategy": "Keep deploy dominant; use deploy as evidence rather than ornament.",
+    "materialBehavior": "marked deploy surfaces",
+    "typographyBehavior": "Use typographic contrast to mark recover and let deploy set the reading pace.",
+    "interactionBehavior": "recover changes emphasis in place while preserving the original route.",
+    "visualDirectionPrompt": "Sparse art-direction plate for developer infrastructure: deploy as a route through deploy. Show marked deploy surfaces, a lateral route with one dominant turn, one focal interface trace, and negative space. No finished website, no invented copy, no feature grid, no stock imagery, no named style references.",
+    "evidence": [
+      {
+        "source": "domain",
+        "input": "developer infrastructure",
+        "conclusion": "The product operates in developer infrastructure.",
+        "consequence": "The interface must expose deploy as an active context."
+      },
+      {
+        "source": "summary",
+        "input": "Make deploy health, ownership, and rollback evidence legible across a changing infrastructure.",
+        "conclusion": "The work centers on make, deploy, health.",
+        "consequence": "The visual system must privilege those objects over generic interface chrome."
+      },
+      {
+        "source": "tension",
+        "input": "Decide what is safe to change under pressure",
+        "conclusion": "The user tension is Decide what is safe to change under pressure.",
+        "consequence": "The first read must make the critical decision legible before secondary detail."
+      },
+      {
+        "source": "jobs",
+        "input": "trace deploys, recover incidents",
+        "conclusion": "Users repeatedly trace, deploys, recover.",
+        "consequence": "Composition should read as a sequence of actions, not a feature inventory."
+      }
+    ],
+    "forbiddenPatterns": [
+      "unrelated decorative gradients",
+      "generic dashboard mockups",
+      "feature-card grids",
+      "floating glass panels",
+      "abstract blobs"
+    ]
+  },
+  "compositionPlan": {
+    "opening": "route",
+    "readingPath": [
+      "deploy context",
+      "trace decision",
+      "make evidence",
+      "confirmation"
+    ],
+    "focalHierarchy": [
+      "deploy",
+      "trace",
+      "make",
+      "recovery"
+    ],
+    "informationDensity": "sparse",
+    "sectionRelationships": [
+      "developer-infrastructure-entry-0 leads to developer-infrastructure-action-0",
+      "developer-infrastructure-action-0 supports developer-infrastructure-context-0"
+    ],
+    "overlapRules": [
+      "action surface crosses the section boundary",
+      "evidence stays optically attached to its source"
+    ],
+    "compositionalRhythm": [
+      "wide pause before trace",
+      "short interval around make",
+      "clear closure after confirmation"
+    ],
+    "typographyBehavior": [
+      "use a compressed display voice for deploy",
+      "keep operational labels terse",
+      "let make carry the longest measure"
+    ],
+    "materialBehavior": [
+      "surface deploy as a visible trace",
+      "differentiate make by texture or rule",
+      "avoid decorative material without a domain role"
+    ],
+    "interactionBehavior": [
+      "trace changes the reading path",
+      "hover/focus reveals evidence in place",
+      "reduced motion preserves the same hierarchy"
+    ],
+    "responsiveTransformations": [
+      "desktop keeps the reading path lateral",
+      "tablet reduces overlap before reducing type",
+      "mobile stacks by action order and preserves source labels"
+    ],
+    "sections": [
+      {
+        "id": "developer-infrastructure-entry-0",
+        "title": "Deploy entry",
+        "height": "min(82svh, 760px)",
+        "layout": "horizontal reading path",
+        "focalPoint": "deploy",
+        "alignment": "start",
+        "rules": [
+          "Start with Decide what is safe to change under pressure",
+          "Anchor the first read to deploy"
+        ]
+      },
+      {
+        "id": "developer-infrastructure-action-0",
+        "title": "Trace lane",
+        "height": "min(82svh, 760px)",
+        "layout": "anchored action surface",
+        "focalPoint": "trace",
+        "alignment": "start",
+        "rules": [
+          "Make trace the dominant transition",
+          "Keep adjacent context visible"
+        ]
+      },
+      {
+        "id": "developer-infrastructure-context-0",
+        "title": "Make context",
+        "height": "min(82svh, 760px)",
+        "layout": "evidence shelf",
+        "focalPoint": "make",
+        "alignment": "start",
+        "rules": [
+          "Show relationships around make",
+          "Use detail as evidence, not decoration"
+        ]
+      }
+    ],
+    "reasoning": [
+      {
+        "source": "domain",
+        "input": "developer infrastructure",
+        "conclusion": "The product operates in developer infrastructure.",
+        "consequence": "The interface must expose deploy as an active context."
+      },
+      {
+        "source": "summary",
+        "input": "Make deploy health, ownership, and rollback evidence legible across a changing infrastructure.",
+        "conclusion": "The work centers on make, deploy, health.",
+        "consequence": "The visual system must privilege those objects over generic interface chrome."
+      },
+      {
+        "source": "tension",
+        "input": "Decide what is safe to change under pressure",
+        "conclusion": "The user tension is Decide what is safe to change under pressure.",
+        "consequence": "The first read must make the critical decision legible before secondary detail."
+      },
+      {
+        "source": "jobs",
+        "input": "trace deploys, recover incidents",
+        "conclusion": "Users repeatedly trace, deploys, recover.",
+        "consequence": "Composition should read as a sequence of actions, not a feature inventory."
+      }
+    ]
+  },
+  "sceneGraph": {
+    "width": 1200,
+    "height": 760,
+    "opening": "route",
+    "readingPath": [
+      "deploy context",
+      "trace decision",
+      "make evidence",
+      "confirmation"
+    ],
+    "regions": [
+      {
+        "id": "developer-infrastructure-entry-0",
+        "role": "deploy",
+        "layout": "track",
+        "x": 72,
+        "y": 390,
+        "width": 960,
+        "height": 76,
+        "layerIds": [
+          "developer-infrastructure-entry-0-layer",
+          "developer-infrastructure-entry-0-label"
+        ],
+        "emphasis": 1,
+        "responsive": {
+          "mobile": "stack after previous region",
+          "tablet": "preserve reading order"
+        }
+      },
+      {
+        "id": "developer-infrastructure-action-0",
+        "role": "trace",
+        "layout": "overlay",
+        "x": 110,
+        "y": 496,
+        "width": 884,
+        "height": 76,
+        "layerIds": [
+          "developer-infrastructure-action-0-layer",
+          "developer-infrastructure-action-0-label"
+        ],
+        "emphasis": 0.84,
+        "responsive": {
+          "mobile": "stack after previous region",
+          "tablet": "preserve reading order"
+        }
+      },
+      {
+        "id": "developer-infrastructure-context-0",
+        "role": "make",
+        "layout": "track",
+        "x": 72,
+        "y": 602,
+        "width": 960,
+        "height": 76,
+        "layerIds": [
+          "developer-infrastructure-context-0-layer",
+          "developer-infrastructure-context-0-label"
+        ],
+        "emphasis": 0.6799999999999999,
+        "responsive": {
+          "mobile": "stack after previous region",
+          "tablet": "preserve reading order"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "id": "developer-infrastructure-entry-0-developer-infrastructure-entry-0-layer-layer",
+        "nodeId": "developer-infrastructure-entry-0-layer",
+        "regionId": "developer-infrastructure-entry-0",
+        "zIndex": 0,
+        "semanticRole": "surface",
+        "anchor": "developer-infrastructure-entry-0"
+      },
+      {
+        "id": "developer-infrastructure-entry-0-developer-infrastructure-entry-0-label-layer",
+        "nodeId": "developer-infrastructure-entry-0-label",
+        "regionId": "developer-infrastructure-entry-0",
+        "zIndex": 1,
+        "semanticRole": "label",
+        "anchor": "developer-infrastructure-entry-0"
+      },
+      {
+        "id": "developer-infrastructure-action-0-developer-infrastructure-action-0-layer-layer",
+        "nodeId": "developer-infrastructure-action-0-layer",
+        "regionId": "developer-infrastructure-action-0",
+        "zIndex": 0,
+        "semanticRole": "surface",
+        "anchor": "developer-infrastructure-action-0"
+      },
+      {
+        "id": "developer-infrastructure-action-0-developer-infrastructure-action-0-label-layer",
+        "nodeId": "developer-infrastructure-action-0-label",
+        "regionId": "developer-infrastructure-action-0",
+        "zIndex": 1,
+        "semanticRole": "label",
+        "anchor": "developer-infrastructure-action-0"
+      },
+      {
+        "id": "developer-infrastructure-context-0-developer-infrastructure-context-0-layer-layer",
+        "nodeId": "developer-infrastructure-context-0-layer",
+        "regionId": "developer-infrastructure-context-0",
+        "zIndex": 0,
+        "semanticRole": "surface",
+        "anchor": "developer-infrastructure-context-0"
+      },
+      {
+        "id": "developer-infrastructure-context-0-developer-infrastructure-context-0-label-layer",
+        "nodeId": "developer-infrastructure-context-0-label",
+        "regionId": "developer-infrastructure-context-0",
+        "zIndex": 1,
+        "semanticRole": "label",
+        "anchor": "developer-infrastructure-context-0"
+      }
+    ],
+    "relationships": [
+      {
+        "from": "developer-infrastructure-entry-0",
+        "to": "developer-infrastructure-action-0",
+        "kind": "leads-to",
+        "rationale": "developer-infrastructure-entry-0 leads to developer-infrastructure-action-0"
+      },
+      {
+        "from": "developer-infrastructure-action-0",
+        "to": "developer-infrastructure-context-0",
+        "kind": "leads-to",
+        "rationale": "developer-infrastructure-action-0 supports developer-infrastructure-context-0"
+      }
+    ],
+    "responsive": [
+      {
+        "breakpoint": "desktop",
+        "target": "reading-path",
+        "operation": "preserve",
+        "before": "lateral route",
+        "after": "lateral route",
+        "rationale": "retain the chosen opening"
+      },
+      {
+        "breakpoint": "tablet",
+        "target": "reading-path",
+        "operation": "reflow",
+        "before": "lateral route",
+        "after": "compressed route",
+        "rationale": "reduce overlap before reducing hierarchy"
+      },
+      {
+        "breakpoint": "mobile",
+        "target": "regions",
+        "operation": "stack",
+        "before": "overlapping regions",
+        "after": "action-ordered stack",
+        "rationale": "keep the operational sequence legible"
+      }
+    ],
+    "motionRelationships": [
+      {
+        "target": "reading-path",
+        "trigger": "focus or scroll",
+        "relationship": "reveal the next evidence region",
+        "reducedMotion": "show all regions in the same order"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "developer-infrastructure-direction-1-field",
+        "kind": "frame",
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 760,
+        "fill": "hsl(237 28% 12%)",
+        "children": []
+      },
+      {
+        "id": "developer-infrastructure-direction-1-title",
+        "kind": "text",
+        "x": 72,
+        "y": 76,
+        "width": 630,
+        "height": 104,
+        "text": "Deploy / Deploy 1",
+        "fontRole": "display",
+        "size": 56,
+        "weight": 600,
+        "color": "hsl(238 28% 92%)",
+        "role": "hero-title"
+      },
+      {
+        "id": "developer-infrastructure-direction-1-metaphor",
+        "kind": "text",
+        "x": 72,
+        "y": 210,
+        "width": 480,
+        "height": 72,
+        "text": "deploy as a route through deploy",
+        "fontRole": "body",
+        "size": 22,
+        "weight": 400,
+        "color": "hsl(238 28% 92%)",
+        "role": "metaphor"
+      },
+      {
+        "id": "developer-infrastructure-direction-1-trace",
+        "kind": "line",
+        "x": 72,
+        "y": 342,
+        "width": 760,
+        "height": 0,
+        "x2": 932,
+        "y2": 342,
+        "stroke": "hsl(238 28% 92%)",
+        "strokeWidth": 3,
+        "role": "reading-path"
+      },
+      {
+        "id": "developer-infrastructure-entry-0",
+        "kind": "frame",
+        "x": 72,
+        "y": 390,
+        "width": 960,
+        "height": 76,
+        "fill": "hsl(238 28% 92%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 3,
+        "children": [],
+        "role": "horizontal reading path"
+      },
+      {
+        "id": "developer-infrastructure-entry-0-label",
+        "kind": "text",
+        "x": 96,
+        "y": 412,
+        "width": 560,
+        "height": 30,
+        "text": "Deploy entry · deploy",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(237 28% 12%)",
+        "role": "section-label"
+      },
+      {
+        "id": "developer-infrastructure-action-0",
+        "kind": "frame",
+        "x": 110,
+        "y": 496,
+        "width": 884,
+        "height": 76,
+        "fill": "hsl(237 28% 12%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 0,
+        "children": [],
+        "role": "anchored action surface"
+      },
+      {
+        "id": "developer-infrastructure-action-0-label",
+        "kind": "text",
+        "x": 134,
+        "y": 518,
+        "width": 560,
+        "height": 30,
+        "text": "Trace lane · trace",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(238 28% 92%)",
+        "role": "section-label"
+      },
+      {
+        "id": "developer-infrastructure-context-0",
+        "kind": "frame",
+        "x": 72,
+        "y": 602,
+        "width": 960,
+        "height": 76,
+        "fill": "hsl(238 28% 92%)",
+        "stroke": "hsl(238 28% 92%)",
+        "radius": 3,
+        "children": [],
+        "role": "evidence shelf"
+      },
+      {
+        "id": "developer-infrastructure-context-0-label",
+        "kind": "text",
+        "x": 96,
+        "y": 624,
+        "width": 560,
+        "height": 30,
+        "text": "Make context · make",
+        "fontRole": "mono",
+        "size": 15,
+        "weight": 500,
+        "color": "hsl(237 28% 12%)",
+        "role": "section-label"
+      }
+    ]
+  },
+  "semanticPatches": [],
+  "providerMetadata": {
+    "provider": "mock",
+    "model": "deterministic",
+    "generatedAt": "2026-07-13T00:00:00.000Z"
+  }
+}
+-->

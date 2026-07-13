@@ -1,0 +1,63 @@
+{
+  "score": 16,
+  "warnings": [
+    {
+      "rule": "abstract-blob",
+      "severity": "warning",
+      "message": "Meaningless abstract blob detected.",
+      "evidence": "blob"
+    },
+    {
+      "rule": "missing-focal-hierarchy",
+      "severity": "error",
+      "message": "The scene graph does not expose a readable focal hierarchy.",
+      "evidence": "deploy context → recover decision → make evidence → confirmation"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "structural-diversity",
+      "label": "Structural diversity",
+      "score": 70,
+      "evidence": ["3 repeated geometry signatures across 10 scene nodes"]
+    },
+    {
+      "id": "composition-hierarchy",
+      "label": "Composition hierarchy",
+      "score": 24,
+      "evidence": ["deploy context → recover decision → make evidence → confirmation"]
+    },
+    {
+      "id": "domain-specificity",
+      "label": "Domain specificity",
+      "score": 100,
+      "evidence": ["make", "deploy", "health", "ownership", "rollback", "field"]
+    },
+    {
+      "id": "semantic-relationships",
+      "label": "Semantic relationships",
+      "score": 100,
+      "evidence": ["2/2 scene relationships"]
+    },
+    {
+      "id": "responsive-intent",
+      "label": "Responsive intent",
+      "score": 84,
+      "evidence": ["2 mobile transformation signals"]
+    },
+    {
+      "id": "material-intent",
+      "label": "Material intent",
+      "score": 100,
+      "evidence": ["calibrated trace traces", "deploy marks", "make surfaces", "trace traces"]
+    },
+    {
+      "id": "compositional-variation",
+      "label": "Compositional variation",
+      "score": 100,
+      "evidence": ["horizontal reading path", "sequential action track", "evidence shelf"]
+    }
+  ],
+  "checkedAt": "2026-07-13T13:30:50.414Z",
+  "ruleset": "lde-anti-slop-2-structural"
+}
