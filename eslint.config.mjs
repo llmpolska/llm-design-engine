@@ -5,7 +5,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['**/dist/**', '**/.output/**', '**/coverage/**', '**/node_modules/**', '**/*.vue'],
+    ignores: ['**/dist/**', '**/.output/**', '**/coverage/**', '**/node_modules/**', '**/*.vue', '**/scripts/**', 'commitlint.config.cjs'],
   },
   {
     files: ['**/*.{ts,tsx}'],
