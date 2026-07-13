@@ -29,3 +29,20 @@ The baseline is reproduced in an isolated worktree before edits. CI runs install
 ## Explicit non-goals
 
 Autonomous image-to-code, screenshot-based implementation verification, npm publication, public deployment, and real external provider calls are not part of this iteration. Their seams remain documented and tested through disabled/mock behavior.
+
+## Sparse visual-direction artifact
+
+Any GPT Image 2/OpenAI image output is an art-direction plate, never a landing-page mockup. The prompt is compiled from the approved `CreativeHypothesis` and may request one dominant composition, one representative interface surface, large typographic forms, material samples, registration marks, and negative space. It must forbid complete page sections, feature grids, fake navigation, testimonials, pricing, dense dashboards, invented paragraphs, and browser frames. The structured `CompositionPlan`, `DesignSceneGraph`, and `.design.md` remain the implementation source of truth.
+
+Each direction persists:
+
+```text
+CreativeHypothesis/
+├── visual-direction.png
+├── composition.json
+├── direction.design.md
+├── asset-language.md
+└── generation.json
+```
+
+Studio labels this artifact `Visual direction — not final page layout`. Deterministic preview is generated only after approval from the scene graph. Refinement preserves the metaphor and visual identity while changing visual-direction constraints rather than adding invented website content.
