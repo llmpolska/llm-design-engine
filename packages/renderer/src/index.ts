@@ -18,7 +18,12 @@ export interface ScreenshotRequest {
 export type ScreenshotRunner = (request: ScreenshotRequest) => Promise<void>;
 
 function escapeHtml(value: string): string {
-  return value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character] ?? character);
+  return value.replace(
+    /[&<>"']/g,
+    (character) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character] ??
+      character,
+  );
 }
 
 function nodeStyle(node: SceneNode): string {
@@ -51,17 +56,27 @@ function renderHtmlNode(node: SceneNode): string {
 function renderSvgNode(node: SceneNode): string {
   if (node.kind === 'text') {
     const anchor = node.align === 'center' ? 'middle' : node.align === 'end' ? 'end' : 'start';
-    const x = node.align === 'center' ? node.x + node.width / 2 : node.align === 'end' ? node.x + node.width : node.x;
+    const x =
+      node.align === 'center'
+        ? node.x + node.width / 2
+        : node.align === 'end'
+          ? node.x + node.width
+          : node.x;
     return `<text x="${x}" y="${node.y + node.size}" fill="${node.color}" font-family="${escapeHtml(node.fontRole)}" font-size="${node.size}" font-weight="${node.weight}" text-anchor="${anchor}">${escapeHtml(node.text)}</text>`;
   }
-  if (node.kind === 'frame') return `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" fill="${node.fill}"${node.stroke ? ` stroke="${node.stroke}"` : ''}${node.radius ? ` rx="${node.radius}"` : ''}/>`;
+  if (node.kind === 'frame')
+    return `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" fill="${node.fill}"${node.stroke ? ` stroke="${node.stroke}"` : ''}${node.radius ? ` rx="${node.radius}"` : ''}/>`;
   if (node.kind === 'shape') {
-    if (node.shape === 'circle') return `<circle cx="${node.x + node.width / 2}" cy="${node.y + node.height / 2}" r="${Math.min(node.width, node.height) / 2}" fill="${node.fill}"${node.stroke ? ` stroke="${node.stroke}" stroke-width="${node.strokeWidth ?? 1}"` : ''}/>`;
+    if (node.shape === 'circle')
+      return `<circle cx="${node.x + node.width / 2}" cy="${node.y + node.height / 2}" r="${Math.min(node.width, node.height) / 2}" fill="${node.fill}"${node.stroke ? ` stroke="${node.stroke}" stroke-width="${node.strokeWidth ?? 1}"` : ''}/>`;
     return `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" fill="${node.fill}"${node.stroke ? ` stroke="${node.stroke}" stroke-width="${node.strokeWidth ?? 1}"` : ''}${node.radius ? ` rx="${node.radius}"` : ''}/>`;
   }
-  if (node.kind === 'line') return `<line x1="${node.x}" y1="${node.y}" x2="${node.x2}" y2="${node.y2}" stroke="${node.stroke}" stroke-width="${node.strokeWidth}"${node.dash ? ` stroke-dasharray="${node.dash}"` : ''}/>`;
-  if (node.kind === 'metric') return `<text x="${node.x}" y="${node.y + 24}" fill="currentColor" font-family="mono" font-size="24">${escapeHtml(node.value)} ${escapeHtml(node.caption)}</text>`;
-  if (node.kind === 'annotation') return `<text x="${node.x}" y="${node.y + 18}" fill="currentColor" font-family="mono" font-size="14">${escapeHtml(node.text)}</text>`;
+  if (node.kind === 'line')
+    return `<line x1="${node.x}" y1="${node.y}" x2="${node.x2}" y2="${node.y2}" stroke="${node.stroke}" stroke-width="${node.strokeWidth}"${node.dash ? ` stroke-dasharray="${node.dash}"` : ''}/>`;
+  if (node.kind === 'metric')
+    return `<text x="${node.x}" y="${node.y + 24}" fill="currentColor" font-family="mono" font-size="24">${escapeHtml(node.value)} ${escapeHtml(node.caption)}</text>`;
+  if (node.kind === 'annotation')
+    return `<text x="${node.x}" y="${node.y + 18}" fill="currentColor" font-family="mono" font-size="14">${escapeHtml(node.text)}</text>`;
   return `<rect x="${node.x}" y="${node.y}" width="${node.width}" height="${node.height}" fill="none" stroke="currentColor" stroke-dasharray="6 6" aria-label="${escapeHtml(node.alt)}"/>`;
 }
 
@@ -81,9 +96,18 @@ export function renderDesignToHtml(design: DesignDocument): string {
 }
 
 export function renderPreviewBundle(design: DesignDocument): PreviewBundle {
-  return { html: renderDesignToHtml(design), css: renderDesignToCss(design), svg: renderDesignToSvg(design), width: design.scene.width, height: design.scene.height };
+  return {
+    html: renderDesignToHtml(design),
+    css: renderDesignToCss(design),
+    svg: renderDesignToSvg(design),
+    width: design.scene.width,
+    height: design.scene.height,
+  };
 }
 
-export async function runScreenshot(request: ScreenshotRequest, runner: ScreenshotRunner): Promise<void> {
+export async function runScreenshot(
+  request: ScreenshotRequest,
+  runner: ScreenshotRunner,
+): Promise<void> {
   await runner(request);
 }

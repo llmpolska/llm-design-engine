@@ -2,10 +2,30 @@
   "name": "@llm-design-engine/cli",
   "version": "0.1.0",
   "type": "module",
-  "private": true,
-  "bin": { "lde": "dist/bin.js" },
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "scripts": { "build": "tsc -p tsconfig.json && node scripts/chmod-bin.mjs", "typecheck": "tsc -p tsconfig.json --noEmit", "test": "vitest run", "lint": "eslint src" },
+  "private": false,
+  "bin": {
+    "lde": "dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/chmod-bin.mjs",
+    "prepack": "pnpm run build",
+    "prepublishOnly": "pnpm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src"
+  },
   "dependencies": {
     "@hono/node-server": "^1.14.4",
     "@llm-design-engine/anti-slop": "workspace:*",

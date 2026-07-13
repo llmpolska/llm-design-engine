@@ -42,18 +42,27 @@ route: /
 concept: professional-kitchen-control-room
 status: approved
 ---
+
 # Narrative
+
 The pass surface keeps the next handoff visible during service.
+
 # Composition
+
 ## Hero
+
 - height: 76svh
 - layout: low command rail with station columns
 - focal-point: the pass surface
 - heading-alignment: bottom-left
+
 # Visual language
+
 - blackened steel
 - printed kitchen tickets
+
 # Avoid
+
 - purple gradients
 - generic dashboard mockups
 ```

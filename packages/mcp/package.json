@@ -1,8 +1,11 @@
 {
-  "name": "@llm-design-engine/renderer",
+  "name": "@llm-design-engine/mcp",
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "bin": {
+    "lde-mcp": "dist/server.js"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -10,16 +13,14 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node scripts/chmod-bin.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "lint": "eslint src"
   },
   "dependencies": {
-    "@llm-design-engine/core": "workspace:*",
-    "@llm-design-engine/shared": "workspace:*"
-  },
-  "devDependencies": {
-    "playwright": "^1.53.1"
+    "@llm-design-engine/cli": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.67"
   }
 }

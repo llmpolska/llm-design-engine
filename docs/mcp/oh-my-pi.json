@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "llm-design-engine": {
+      "command": "node",
+      "args": ["scripts/run-mcp.mjs"],
+      "cwd": "/absolute/path/to/llm-design-engine"
+    }
+  },
+  "notes": [
+    "The server is STDIO-only and emits protocol responses on stdout.",
+    "The runner sends build output to stderr before starting the server.",
+    "Verify the host-specific config key name against your Oh My Pi release."
+  ]
+}

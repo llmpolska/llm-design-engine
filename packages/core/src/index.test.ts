@@ -3,11 +3,14 @@ import { createProjectBrief, type DesignDocument } from './index.js';
 
 describe('core contracts', () => {
   it('creates a stable brief with a slug and timestamps', () => {
-    const brief = createProjectBrief({
-      name: 'GastroOps',
-      summary: 'Operations for restaurant teams',
-      domain: 'restaurant operations',
-    }, new Date('2026-01-02T03:04:05.000Z'));
+    const brief = createProjectBrief(
+      {
+        name: 'GastroOps',
+        summary: 'Operations for restaurant teams',
+        domain: 'restaurant operations',
+      },
+      new Date('2026-01-02T03:04:05.000Z'),
+    );
 
     expect(brief).toMatchObject({
       id: 'gastroops',

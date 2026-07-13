@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "llm-design-engine": {
+      "type": "local",
+      "command": ["node", "scripts/run-mcp.mjs"],
+      "enabled": true,
+      "cwd": "/absolute/path/to/llm-design-engine"
+    }
+  }
+}

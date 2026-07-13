@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "llm-design-engine": {
+      "command": "node",
+      "args": ["scripts/run-mcp.mjs"],
+      "cwd": "/absolute/path/to/llm-design-engine"
+    }
+  }
+}

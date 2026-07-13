@@ -22,7 +22,8 @@ export function createDeferredScanner(): RepoScanner {
       return {
         status: 'deferred',
         designId: request.designId,
-        reason: 'Full visual implementation verification is an extension point; the MVP does not claim to judge arbitrary frontend fidelity.',
+        reason:
+          'Full visual implementation verification is an extension point; the MVP does not claim to judge arbitrary frontend fidelity.',
         checkedRoutes: request.routes,
         extensionPoint: 'visual-implementation-verifier',
       };

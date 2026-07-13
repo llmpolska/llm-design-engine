@@ -13,12 +13,51 @@ const sceneBase = z.object({
 });
 
 const sceneNodeSchema = z.discriminatedUnion('kind', [
-  sceneBase.extend({ kind: z.literal('frame'), fill: z.string(), stroke: z.string().optional(), radius: z.number().optional(), children: z.array(z.string()) }),
-  sceneBase.extend({ kind: z.literal('text'), text: z.string(), fontRole: z.enum(['display', 'body', 'mono']), size: z.number(), weight: z.number(), color: z.string(), align: z.enum(['start', 'center', 'end']).optional() }),
-  sceneBase.extend({ kind: z.literal('shape'), shape: z.enum(['circle', 'rect', 'arc', 'path']), fill: z.string(), stroke: z.string().optional(), strokeWidth: z.number().optional(), radius: z.number().optional(), d: z.string().optional() }),
-  sceneBase.extend({ kind: z.literal('line'), x2: z.number(), y2: z.number(), stroke: z.string(), strokeWidth: z.number(), dash: z.string().optional() }),
-  sceneBase.extend({ kind: z.literal('image'), assetId: z.string(), fit: z.enum(['cover', 'contain']), alt: z.string() }),
-  sceneBase.extend({ kind: z.literal('metric'), value: z.string(), caption: z.string(), trend: z.string().optional() }),
+  sceneBase.extend({
+    kind: z.literal('frame'),
+    fill: z.string(),
+    stroke: z.string().optional(),
+    radius: z.number().optional(),
+    children: z.array(z.string()),
+  }),
+  sceneBase.extend({
+    kind: z.literal('text'),
+    text: z.string(),
+    fontRole: z.enum(['display', 'body', 'mono']),
+    size: z.number(),
+    weight: z.number(),
+    color: z.string(),
+    align: z.enum(['start', 'center', 'end']).optional(),
+  }),
+  sceneBase.extend({
+    kind: z.literal('shape'),
+    shape: z.enum(['circle', 'rect', 'arc', 'path']),
+    fill: z.string(),
+    stroke: z.string().optional(),
+    strokeWidth: z.number().optional(),
+    radius: z.number().optional(),
+    d: z.string().optional(),
+  }),
+  sceneBase.extend({
+    kind: z.literal('line'),
+    x2: z.number(),
+    y2: z.number(),
+    stroke: z.string(),
+    strokeWidth: z.number(),
+    dash: z.string().optional(),
+  }),
+  sceneBase.extend({
+    kind: z.literal('image'),
+    assetId: z.string(),
+    fit: z.enum(['cover', 'contain']),
+    alt: z.string(),
+  }),
+  sceneBase.extend({
+    kind: z.literal('metric'),
+    value: z.string(),
+    caption: z.string(),
+    trend: z.string().optional(),
+  }),
   sceneBase.extend({ kind: z.literal('annotation'), text: z.string(), anchor: z.string() }),
 ]);
 
@@ -55,14 +94,44 @@ export const designDocumentSchema = z.object({
   composition: z.object({ sections: z.array(designSectionSchema) }),
   visualLanguage: z.object({ materials: z.array(z.string()), keywords: z.array(z.string()) }),
   typography: z.object({ display: z.string(), body: z.string(), mono: z.string() }),
-  colors: z.object({ background: z.string(), foreground: z.string(), accent: z.string(), muted: z.string(), secondary: z.string().optional() }),
-  responsive: z.object({ mobile: z.array(z.string()), tablet: z.array(z.string()).optional(), desktop: z.array(z.string()).optional() }),
-  scene: z.object({ width: z.number().positive(), height: z.number().positive(), nodes: z.array(sceneNodeSchema) }),
-  motion: z.object({ principles: z.array(z.string()), reducedMotion: z.array(z.string()).optional() }),
+  colors: z.object({
+    background: z.string(),
+    foreground: z.string(),
+    accent: z.string(),
+    muted: z.string(),
+    secondary: z.string().optional(),
+  }),
+  responsive: z.object({
+    mobile: z.array(z.string()),
+    tablet: z.array(z.string()).optional(),
+    desktop: z.array(z.string()).optional(),
+  }),
+  scene: z.object({
+    width: z.number().positive(),
+    height: z.number().positive(),
+    nodes: z.array(sceneNodeSchema),
+  }),
+  motion: z.object({
+    principles: z.array(z.string()),
+    reducedMotion: z.array(z.string()).optional(),
+  }),
   assets: z.array(assetRequirementSchema),
   forbiddenPatterns: z.array(z.string()),
   agentInstructions: z.array(z.string()),
   generatedAt: z.string().datetime(),
+  meaning: z.unknown().optional(),
+  hypothesis: z.unknown().optional(),
+  compositionPlan: z.unknown().optional(),
+  sceneGraph: z.unknown().optional(),
+  semanticPatches: z.array(z.unknown()).optional(),
+  providerMetadata: z
+    .object({
+      provider: z.string().min(1),
+      model: z.string().optional(),
+      requestId: z.string().optional(),
+      generatedAt: z.string().datetime(),
+    })
+    .optional(),
 });
 
 export type ParsedDesignMarkdown = {
@@ -84,24 +153,30 @@ function parseFrontmatter(source: string): { values: Record<string, string>; bod
     const separator = line.indexOf(':');
     if (separator < 1) continue;
     const key = line.slice(0, separator).trim();
-    values[key] = line.slice(separator + 1).replace(/^['"]|['"]$/g, '').trim();
+    values[key] = line
+      .slice(separator + 1)
+      .replace(/^['"]|['"]$/g, '')
+      .trim();
   }
   return { values, body };
 }
 
 function sectionMarkdown(data: DesignDocument): string {
-  const sections = data.composition.sections.map((section) => [
-    `## ${section.title}`,
-    `- id: ${section.id}`,
-    `- height: ${section.height}`,
-    `- layout: ${section.layout}`,
-    `- focal-point: ${section.focalPoint}`,
-    `- alignment: ${section.alignment}`,
-    ...section.rules.map((rule) => `- ${rule}`),
-  ].join('\n')).join('\n\n');
+  const sections = data.composition.sections
+    .map((section) =>
+      [
+        `## ${section.title}`,
+        `- id: ${section.id}`,
+        `- height: ${section.height}`,
+        `- layout: ${section.layout}`,
+        `- focal-point: ${section.focalPoint}`,
+        `- alignment: ${section.alignment}`,
+        ...section.rules.map((rule) => `- ${rule}`),
+      ].join('\n'),
+    )
+    .join('\n\n');
   return sections || '## Hero\n- composition follows the approved direction';
 }
-
 
 export function serializeDesignMarkdown(input: DesignDocument): string {
   const data = designDocumentSchema.parse(input) as DesignDocument;
@@ -139,8 +214,10 @@ export function parseDesignMarkdown(source: string): ParsedDesignMarkdown {
   const payload = body.match(/<!-- lde-data\n([\s\S]*?)\n-->/)?.[1];
   if (!payload) throw new Error('Design document is missing the lde-data payload');
   const parsed = designDocumentSchema.parse(JSON.parse(payload)) as DesignDocument;
-  if (values.id && values.id !== parsed.id) throw new Error('Frontmatter id does not match payload');
-  if (values.status && values.status !== parsed.status) throw new Error('Frontmatter status does not match payload');
+  if (values.id && values.id !== parsed.id)
+    throw new Error('Frontmatter id does not match payload');
+  if (values.status && values.status !== parsed.status)
+    throw new Error('Frontmatter status does not match payload');
   return { data: parsed, markdown: source, frontmatter: values };
 }
 

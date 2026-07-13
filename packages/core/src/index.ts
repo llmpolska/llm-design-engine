@@ -41,6 +41,61 @@ export interface ProductInterpretation {
   patternsToAvoid: string[];
 }
 
+export type MeaningSource =
+  'domain' | 'summary' | 'tension' | 'users' | 'jobs' | 'constraints' | 'references';
+
+export interface MeaningEvidence {
+  source: MeaningSource;
+  input: string;
+  conclusion: string;
+  consequence: string;
+}
+
+export interface ProductMeaning extends ProductInterpretation {
+  businessObjective: string;
+  operationalVerbs: string[];
+  userJourney: string[];
+  temporalBehavior: string[];
+  informationHierarchy: string[];
+  entityRelationships: string[];
+  evidence: MeaningEvidence[];
+}
+
+export type SceneOpening =
+  'document' | 'route' | 'interface' | 'immersive' | 'typographic' | 'operational';
+export type SceneLayout = 'stack' | 'grid' | 'track' | 'overlay' | 'freeform';
+
+export interface CreativeHypothesis {
+  id: string;
+  statement: string;
+  visualMetaphor: string;
+  emotionalBehavior: string;
+  spatialStrategy: string;
+  focalStrategy: string;
+  materialBehavior: string;
+  typographyBehavior: string;
+  interactionBehavior: string;
+  visualDirectionPrompt: string;
+  evidence: MeaningEvidence[];
+  forbiddenPatterns: string[];
+}
+
+export interface CompositionPlan {
+  opening: SceneOpening;
+  readingPath: string[];
+  focalHierarchy: string[];
+  informationDensity: 'sparse' | 'balanced' | 'dense';
+  sectionRelationships: string[];
+  overlapRules: string[];
+  compositionalRhythm: string[];
+  typographyBehavior: string[];
+  materialBehavior: string[];
+  interactionBehavior: string[];
+  responsiveTransformations: string[];
+  sections: DesignSection[];
+  reasoning: MeaningEvidence[];
+}
+
 export type DirectionStatus = 'candidate' | 'selected' | 'approved';
 
 export interface CreativeDirection {
@@ -62,16 +117,15 @@ export interface CreativeDirection {
   colorStrategy: string;
   rationale: string;
   forbiddenPatterns: string[];
+  hypothesisId?: string;
+  hypothesis?: CreativeHypothesis;
+  compositionPlan?: CompositionPlan;
+  meaning?: ProductMeaning;
+  distinctivenessFingerprint?: string[];
 }
 
 export type SceneNode =
-  | SceneFrame
-  | SceneText
-  | SceneShape
-  | SceneLine
-  | SceneImage
-  | SceneMetric
-  | SceneAnnotation;
+  SceneFrame | SceneText | SceneShape | SceneLine | SceneImage | SceneMetric | SceneAnnotation;
 
 export interface SceneBase {
   id: string;
@@ -87,6 +141,7 @@ export interface SceneBase {
 export interface SceneFrame extends SceneBase {
   kind: 'frame';
   fill: string;
+
   stroke?: string;
   radius?: number;
   children: string[];
@@ -141,6 +196,78 @@ export interface SceneAnnotation extends SceneBase {
   anchor: string;
 }
 
+export interface SceneRegion {
+  id: string;
+  role: string;
+  layout: SceneLayout;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  layerIds: string[];
+  emphasis: number;
+  responsive?: Record<string, string>;
+}
+
+export interface SceneLayer {
+  id: string;
+  nodeId: string;
+  regionId: string;
+  zIndex: number;
+  semanticRole: string;
+  anchor?: string;
+  relationships?: string[];
+}
+
+export type SceneRelationshipKind = 'leads-to' | 'anchors' | 'supports' | 'contrasts' | 'contains';
+
+export interface SceneRelationship {
+  from: string;
+  to: string;
+  kind: SceneRelationshipKind;
+  rationale: string;
+}
+
+export interface ResponsiveTransformation {
+  breakpoint: 'mobile' | 'tablet' | 'desktop';
+  target: string;
+  operation: 'reflow' | 'stack' | 'collapse' | 'preserve' | 'move' | 'resize' | 'hide';
+  before: string;
+  after: string;
+  rationale: string;
+}
+
+export interface MotionRelationship {
+  target: string;
+  trigger: string;
+  relationship: string;
+  reducedMotion: string;
+}
+
+export interface DesignSceneGraph {
+  width: number;
+  height: number;
+  opening: SceneOpening;
+  readingPath: string[];
+  regions: SceneRegion[];
+  layers: SceneLayer[];
+  relationships: SceneRelationship[];
+  responsive: ResponsiveTransformation[];
+  motionRelationships: MotionRelationship[];
+  nodes: SceneNode[];
+}
+
+export type SemanticPatchOperation = 'change' | 'add' | 'remove';
+
+export interface SemanticPatch {
+  operation: SemanticPatchOperation;
+  target: string;
+  before: unknown;
+  after: unknown;
+  reason: string;
+  sourceFeedback: string;
+}
+
 export interface DesignDocument {
   id: string;
   route: string;
@@ -151,7 +278,13 @@ export interface DesignDocument {
   composition: { sections: DesignSection[] };
   visualLanguage: { materials: string[]; keywords: string[] };
   typography: { display: string; body: string; mono: string };
-  colors: { background: string; foreground: string; accent: string; muted: string; secondary?: string };
+  colors: {
+    background: string;
+    foreground: string;
+    accent: string;
+    muted: string;
+    secondary?: string;
+  };
   responsive: { mobile: string[]; tablet?: string[]; desktop?: string[] };
   scene: { width: number; height: number; nodes: SceneNode[] };
   motion: { principles: string[]; reducedMotion?: string[] };
@@ -159,6 +292,17 @@ export interface DesignDocument {
   forbiddenPatterns: string[];
   agentInstructions: string[];
   generatedAt: string;
+  meaning?: ProductMeaning;
+  hypothesis?: CreativeHypothesis;
+  compositionPlan?: CompositionPlan;
+  sceneGraph?: DesignSceneGraph;
+  semanticPatches?: SemanticPatch[];
+  providerMetadata?: {
+    provider: string;
+    model?: string;
+    requestId?: string;
+    generatedAt: string;
+  };
 }
 
 export interface DesignSection {
@@ -230,9 +374,17 @@ export interface LintWarning {
   evidence?: string;
 }
 
+export interface LintMetric {
+  id: string;
+  label: string;
+  score: number;
+  evidence: string[];
+}
+
 export interface LintReport {
   score: number;
   warnings: LintWarning[];
+  metrics?: LintMetric[];
   checkedAt: string;
   ruleset: string;
 }
