@@ -120,6 +120,9 @@ h1 em, h2 em, h3 em { color: var(--coral); font-style: normal; }
 .brand-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: center; padding: 130px 0; border-top: 1px solid var(--rule); }
 .brand-copy h2 { margin: 0; font-size: clamp(48px, 7vw, 90px); line-height: .85; }
 .brand-copy > p:not(.kicker) { max-width: 420px; color: var(--muted); line-height: 1.6; }
+.brand-copy h1 { margin: 0; max-width: 640px; font-size: clamp(48px, 7vw, 96px); line-height: .84; }
+.brand-route-page { min-height: calc(100svh - 120px); }
+.route-note { padding-left: 16px; border-left: 2px solid var(--teal); }
 .brand-board { position: relative; border: 1px solid var(--ink); background: var(--paper-deep); transform: rotate(1deg); box-shadow: -12px 12px 0 var(--teal); }
 .swatch-labels { display: flex; flex-wrap: wrap; gap: 16px; padding: 16px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 9px; text-transform: uppercase; }
 .swatch-labels span { display: flex; gap: 7px; align-items: center; }

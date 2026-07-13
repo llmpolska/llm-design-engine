@@ -7,6 +7,8 @@ test('website shows meaning-to-specification story and brand route', async ({ pa
   await expect(page.getByRole('tabpanel')).toContainText('A spec an agent can actually build');
   await page.getByRole('button', { name: /View brandkit/i }).click();
   await expect(page.locator('#brandkit')).toBeVisible();
+  await page.goto('http://127.0.0.1:4173/#brand');
+  await expect(page.getByRole('heading', { name: /A system that makes decisions visible/i })).toBeVisible();
 });
 
 test('studio reaches all views and remains usable on mobile', async ({ browser }) => {

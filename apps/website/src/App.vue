@@ -1,19 +1,35 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { transformationStages } from './site';
 
 const activeStage = ref(0);
 const currentStage = computed(() => transformationStages[activeStage.value] ?? transformationStages[0]!);
 const isBrandRoute = ref(false);
 
+function syncBrandRoute() {
+  isBrandRoute.value = window.location.hash === '#brand' || window.location.hash === '#brandkit';
+}
+
 function selectStage(index: number) {
   activeStage.value = index;
 }
 
-function showBrandkit() {
-  isBrandRoute.value = true;
-  requestAnimationFrame(() => document.querySelector('#brandkit')?.scrollIntoView({ behavior: 'smooth' }));
+function navigateBrandRoute() {
+  window.location.hash = '#brand';
 }
+
+function closeBrandRoute() {
+  window.location.hash = '#hero';
+}
+
+onMounted(() => {
+  syncBrandRoute();
+  window.addEventListener('hashchange', syncBrandRoute);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', syncBrandRoute);
+});
 </script>
 
 <template>
@@ -29,10 +45,27 @@ function showBrandkit() {
         <a href="#gastroops">Field notes</a>
         <a href="#open-source">GitHub ↗</a>
       </nav>
-      <button class="header-cta" type="button" @click="showBrandkit">View brandkit</button>
+      <button class="header-cta" type="button" @click="navigateBrandRoute">View brandkit</button>
     </header>
 
-    <main>
+    <main v-if="isBrandRoute" class="brand-route-page">
+      <section id="brandkit" class="brand-section section-frame" aria-labelledby="brand-route-title">
+        <div class="brand-copy">
+          <p class="kicker">Brand showcase / route</p>
+          <h1 id="brand-route-title">A system that makes <em>decisions visible.</em></h1>
+          <p>The LLM Design Engine identity is a working specimen: warm paper for context, oxidized coral for intervention, and mineral teal for a reliable path through the system.</p>
+          <p class="route-note">The mark is a registration frame, not a sparkle. It holds meaning in place long enough for an agent to execute it.</p>
+          <a class="button button-primary" href="#hero" @click="closeBrandRoute">Return to compiler <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="brand-board">
+          <img src="/static/brandkit.svg" alt="LLM Design Engine brandkit board with paper, coral and mineral teal swatches" />
+          <div class="swatch-labels"><span><i class="swatch swatch-paper"></i>Warm paper / 01</span><span><i class="swatch swatch-coral"></i>Oxidized coral / 02</span><span><i class="swatch swatch-teal"></i>Mineral teal / 03</span></div>
+        </div>
+      </section>
+    </main>
+
+    <main v-else>
+
       <section id="hero" class="hero section-frame reveal">
         <div class="hero-copy">
           <p class="kicker"><span class="registration-dot" aria-hidden="true"></span> Design compiler / 01</p>
@@ -100,7 +133,7 @@ function showBrandkit() {
       </section>
 
       <section id="brandkit" class="section-frame brand-section reveal">
-        <div class="brand-copy"><p class="kicker">Brandkit / the foundry</p><h2>Warm paper.<br /><em>Sharp thinking.</em></h2><p>A visual language for tools that shape tools. Oxidized coral marks the intervention; mineral teal marks a reliable path through the system.</p><button class="button button-secondary" type="button" @click="isBrandRoute = !isBrandRoute">{{ isBrandRoute ? 'Close brand route' : 'Open brand route' }}</button></div>
+        <div class="brand-copy"><p class="kicker">Brandkit / the foundry</p><h2>Warm paper.<br /><em>Sharp thinking.</em></h2><p>A visual language for tools that shape tools. Oxidized coral marks the intervention; mineral teal marks a reliable path through the system.</p><button class="button button-secondary" type="button" @click="navigateBrandRoute">Open brand route</button></div>
         <div class="brand-board"><img src="/static/brandkit.svg" alt="LLM Design Engine brandkit board with paper, coral and mineral teal swatches" /><div class="swatch-labels"><span><i class="swatch swatch-paper"></i>Warm paper / 01</span><span><i class="swatch swatch-coral"></i>Oxidized coral / 02</span><span><i class="swatch swatch-teal"></i>Mineral teal / 03</span></div></div>
       </section>
 
