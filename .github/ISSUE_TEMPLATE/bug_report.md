@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report a reproducible problem in the engine, CLI, renderer, or apps
-title: "bug: "
+title: 'bug: '
 labels: bug
 assignees: ''
 ---

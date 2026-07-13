@@ -8,7 +8,15 @@ const run = promisify(execFile);
 const source = process.cwd();
 const destination = await mkdtemp(join(tmpdir(), 'lde-clean-checkout-'));
 
-const excluded = new Set(['.git', 'node_modules', '.turbo', 'dist', 'coverage', 'playwright-report', 'test-results']);
+const excluded = new Set([
+  '.git',
+  'node_modules',
+  '.turbo',
+  'dist',
+  'coverage',
+  'playwright-report',
+  'test-results',
+]);
 await cp(source, destination, {
   recursive: true,
   filter: (path) => {

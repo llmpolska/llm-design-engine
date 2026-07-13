@@ -5,7 +5,24 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['**/dist/**', '**/.output/**', '**/coverage/**', '**/node_modules/**', '**/*.vue', '**/scripts/**', 'commitlint.config.cjs'],
+    ignores: [
+      '**/dist/**',
+      '**/.output/**',
+      '**/coverage/**',
+      '**/node_modules/**',
+      '**/*.vue',
+      '**/scripts/**',
+      'commitlint.config.cjs',
+    ],
+  },
+  {
+    files: ['tests/e2e/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+      },
+    },
   },
   {
     files: ['**/*.{ts,tsx}'],

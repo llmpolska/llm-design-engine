@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Propose a useful addition to the design compiler
-title: "feat: "
+title: 'feat: '
 labels: enhancement
 assignees: ''
 ---
