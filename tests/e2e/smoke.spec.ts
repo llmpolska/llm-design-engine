@@ -14,9 +14,9 @@ test('studio reaches all views and remains usable on mobile', async ({ browser }
   await page.goto('http://127.0.0.1:4174');
   await expect(page.getByRole('heading', { name: 'Project overview' })).toBeVisible();
   await page.getByRole('button', { name: /Brief editor/i }).click();
-  await expect(page.getByRole('heading', { name: 'Brief editor' })).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="brief-title"] h2')).toBeVisible();
   await page.getByRole('button', { name: /Anti-slop report/i }).click();
-  await expect(page.getByRole('heading', { name: 'Anti-slop report' })).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="lint-title"] h2')).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
   expect(overflow).toBe(false);
   await page.close();
