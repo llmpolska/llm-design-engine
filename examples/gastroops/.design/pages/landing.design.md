@@ -4,11 +4,15 @@ route: /
 concept: professional-kitchen-control-room
 status: approved
 ---
+
 # Narrative
+
 Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates.
 
 # Composition
+
 ## Hero
+
 - id: hero
 - height: 76svh
 - layout: low command rail with station columns and a lit pass horizon
@@ -20,6 +24,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - handoff
 
 ## Evidence
+
 - id: evidence
 - height: auto
 - layout: annotated field notes with one dominant specimen
@@ -29,6 +34,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - keep the visual route visible
 
 ## Handoff
+
 - id: handoff
 - height: 68svh
 - layout: quiet instruction rail
@@ -37,6 +43,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - end with an instruction, not a decoration
 
 # Visual language
+
 - blackened steel
 - printed kitchen tickets
 - warm pass lighting
@@ -46,6 +53,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - keyword: blackened steel field with warm pass amber and one coral exception
 
 # Avoid
+
 - generic split hero
 - purple gradients
 - glassmorphism

@@ -1,12 +1,7 @@
 {
   "projectId": "gastroops",
   "narrative": "gastroops speaks through a kitchen control room at the pass. The identity turns blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops into a readable system of marks and handoffs.",
-  "personality": [
-    "observant",
-    "precise",
-    "warm under pressure",
-    "resourceful"
-  ],
+  "personality": ["observant", "precise", "warm under pressure", "resourceful"],
   "toneOfVoice": [
     "concrete over clever",
     "calm when the room accelerates",
@@ -113,11 +108,7 @@
       "id": "gastroops-blueprint-art",
       "role": "meaning to blueprint illustration",
       "prompt": "A sequence of annotated marks compressing Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates. into an executable blueprint; paper, plotter ink, registration brackets",
-      "negativeConstraints": [
-        "abstract blob",
-        "neon circuit board",
-        "unrelated stock imagery"
-      ],
+      "negativeConstraints": ["abstract blob", "neon circuit board", "unrelated stock imagery"],
       "aspectRatio": "4:3",
       "intendedPlacement": "process section",
       "generatedFile": "assets/blueprint-art.svg",
@@ -129,11 +120,7 @@
       "id": "gastroops-material-study",
       "role": "material study",
       "prompt": "Close crop of blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops arranged as domain evidence for Professional Kitchen Control Room; high contrast, honest texture",
-      "negativeConstraints": [
-        "3D render",
-        "generic device mockup",
-        "glow"
-      ],
+      "negativeConstraints": ["3D render", "generic device mockup", "glow"],
       "aspectRatio": "3:2",
       "intendedPlacement": "direction detail",
       "generatedFile": "assets/material-study.svg",
@@ -145,11 +132,7 @@
       "id": "gastroops-social-preview",
       "role": "social preview",
       "prompt": "Editorial title plate for gastroops using the a kitchen control room at the pass visual language; readable mark, paper and ink, no UI screenshot",
-      "negativeConstraints": [
-        "stock image",
-        "generic AI imagery",
-        "purple cloud"
-      ],
+      "negativeConstraints": ["stock image", "generic AI imagery", "purple cloud"],
       "aspectRatio": "1.91:1",
       "intendedPlacement": "Open Graph image",
       "generatedFile": "assets/social-preview.svg",

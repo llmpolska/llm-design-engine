@@ -2,9 +2,13 @@
 project: gastroops
 count: 4
 ---
+
 # Creative directions
+
 Each direction is a different metaphor, material, composition, and interaction concept. Mode changes are not counted as direction changes.
+
 ## 1. Professional Kitchen Control Room
+
 - id: gastroops-direction-1
 - metaphor: a kitchen control room at the pass
 - narrative: Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates.
@@ -16,6 +20,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 2. Field Ledger
+
 - id: gastroops-direction-2
 - metaphor: a field ledger with folded working pages
 - narrative: The product becomes a sequence of observations that can be marked, folded, and handed forward. Domain cues: restaurant, operations, operational.
@@ -27,6 +32,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 3. Signal Map
+
 - id: gastroops-direction-3
 - metaphor: a signal map finding a clear route through noise
 - narrative: A web of domain signals converges on the one route that deserves attention now. Domain cues: restaurant, operations, operational.
@@ -38,6 +44,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 4. Material Archive
+
 - id: gastroops-direction-4
 - metaphor: a material archive cataloguing what matters
 - narrative: The interface feels like a living collection where every object earns its label and place. Domain cues: restaurant, operations, operational.

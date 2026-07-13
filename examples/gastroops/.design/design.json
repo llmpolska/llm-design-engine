@@ -14,12 +14,7 @@
         "layout": "low command rail with station columns and a lit pass horizon",
         "focalPoint": "the pass surface where the next handoff becomes undeniable",
         "alignment": "bottom-left",
-        "rules": [
-          "signal",
-          "working surface",
-          "evidence",
-          "handoff"
-        ]
+        "rules": ["signal", "working surface", "evidence", "handoff"]
       },
       {
         "id": "evidence",
@@ -28,10 +23,7 @@
         "layout": "annotated field notes with one dominant specimen",
         "focalPoint": "domain-specific evidence",
         "alignment": "left",
-        "rules": [
-          "never repeat identical cards",
-          "keep the visual route visible"
-        ]
+        "rules": ["never repeat identical cards", "keep the visual route visible"]
       },
       {
         "id": "handoff",
@@ -40,9 +32,7 @@
         "layout": "quiet instruction rail",
         "focalPoint": "the next executable move",
         "alignment": "right",
-        "rules": [
-          "end with an instruction, not a decoration"
-        ]
+        "rules": ["end with an instruction, not a decoration"]
       }
     ]
   },
@@ -77,10 +67,7 @@
       "move annotations below their anchors",
       "preserve route markers as a vertical spine"
     ],
-    "tablet": [
-      "reduce scene overlap",
-      "keep the focal surface at 100% width"
-    ]
+    "tablet": ["reduce scene overlap", "keep the focal surface at 100% width"]
   },
   "scene": {
     "width": 1440,
@@ -96,11 +83,7 @@
         "fill": "#171716",
         "stroke": "#d9d0c2",
         "radius": 8,
-        "children": [
-          "hero-kicker",
-          "hero-title",
-          "hero-route"
-        ]
+        "children": ["hero-kicker", "hero-title", "hero-route"]
       },
       {
         "id": "hero-kicker",
@@ -161,9 +144,7 @@
       "annotations arrive after their anchor",
       "handoff moves with measured weight"
     ],
-    "reducedMotion": [
-      "remove drawing motion and retain the final marks"
-    ]
+    "reducedMotion": ["remove drawing motion and retain the final marks"]
   },
   "assets": [
     {

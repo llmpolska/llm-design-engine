@@ -3,7 +3,9 @@ id: gastroops
 name: GastroOps
 domain: restaurant operations
 ---
+
 # Product brief
+
 Operational system for restaurants covering tasks, food safety, inventory, documentation, staff operations, and synchronization status.
 
 ## Users
@@ -11,9 +13,11 @@ Operational system for restaurants covering tasks, food safety, inventory, docum
 ## Jobs
 
 ## Tension
+
 Keep control during the pressure of service without hiding the next handoff.
 
 ## Constraints
+
 - None recorded.
 
 <!-- lde-brief-data

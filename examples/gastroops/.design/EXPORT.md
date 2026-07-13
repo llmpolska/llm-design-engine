@@ -1,7 +1,9 @@
 # LLM Design Engine export
+
 Project: gastroops-direction-1-design
 
 ## Agent implementation instructions
+
 - Build the page from the a kitchen control room at the pass metaphor, not from a generic SaaS layout.
 - Use low command rail with station columns and a lit pass horizon.
 - Make kitchen pass, station marking, temperature log visible as domain evidence.
@@ -9,17 +11,23 @@ Project: gastroops-direction-1-design
 - Preserve the route from meaning to handoff in responsive layouts.
 
 ## Approved design document
+
 ---
+
 id: gastroops-direction-1-design
 route: /
 concept: professional-kitchen-control-room
 status: approved
 ---
+
 # Narrative
+
 Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates.
 
 # Composition
+
 ## Hero
+
 - id: hero
 - height: 76svh
 - layout: low command rail with station columns and a lit pass horizon
@@ -31,6 +39,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - handoff
 
 ## Evidence
+
 - id: evidence
 - height: auto
 - layout: annotated field notes with one dominant specimen
@@ -40,6 +49,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - keep the visual route visible
 
 ## Handoff
+
 - id: handoff
 - height: 68svh
 - layout: quiet instruction rail
@@ -48,6 +58,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - end with an instruction, not a decoration
 
 # Visual language
+
 - blackened steel
 - printed kitchen tickets
 - warm pass lighting
@@ -57,6 +68,7 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 - keyword: blackened steel field with warm pass amber and one coral exception
 
 # Avoid
+
 - generic split hero
 - purple gradients
 - glassmorphism
@@ -263,15 +275,19 @@ Steel worktops, kitchen tickets, station markings, and pass lighting keep the ne
 }
 -->
 
-
 ## Source artifacts
+
 ### BRIEF.md
+
 ---
+
 id: gastroops
 name: GastroOps
 domain: restaurant operations
 ---
+
 # Product brief
+
 Operational system for restaurants covering tasks, food safety, inventory, documentation, staff operations, and synchronization status.
 
 ## Users
@@ -279,9 +295,11 @@ Operational system for restaurants covering tasks, food safety, inventory, docum
 ## Jobs
 
 ## Tension
+
 Keep control during the pressure of service without hiding the next handoff.
 
 ## Constraints
+
 - None recorded.
 
 <!-- lde-brief-data
@@ -302,13 +320,19 @@ Keep control during the pressure of service without hiding the next handoff.
 -->
 
 ### DIRECTIONS.md
+
 ---
+
 project: gastroops
 count: 4
 ---
+
 # Creative directions
+
 Each direction is a different metaphor, material, composition, and interaction concept. Mode changes are not counted as direction changes.
+
 ## 1. Professional Kitchen Control Room
+
 - id: gastroops-direction-1
 - metaphor: a kitchen control room at the pass
 - narrative: Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates.
@@ -320,6 +344,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 2. Field Ledger
+
 - id: gastroops-direction-2
 - metaphor: a field ledger with folded working pages
 - narrative: The product becomes a sequence of observations that can be marked, folded, and handed forward. Domain cues: restaurant, operations, operational.
@@ -331,6 +356,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 3. Signal Map
+
 - id: gastroops-direction-3
 - metaphor: a signal map finding a clear route through noise
 - narrative: A web of domain signals converges on the one route that deserves attention now. Domain cues: restaurant, operations, operational.
@@ -342,6 +368,7 @@ Each direction is a different metaphor, material, composition, and interaction c
 - avoid: generic split hero without a domain narrative; purple gradients or decorative glow; glassmorphism and floating dashboard mockups; repetitive three-column feature grids; visual elements that could replace the restaurant operations context unchanged; a generic device mockup as the primary focal point
 
 ## 4. Material Archive
+
 - id: gastroops-direction-4
 - metaphor: a material archive cataloguing what matters
 - narrative: The interface feels like a living collection where every object earns its label and place. Domain cues: restaurant, operations, operational.
@@ -566,38 +593,49 @@ Each direction is a different metaphor, material, composition, and interaction c
 -->
 
 ### BRAND.md
+
 ---
+
 project: gastroops
 generated-at: 2026-07-13T10:42:29.663Z
 ---
+
 # Brand narrative
+
 gastroops speaks through a kitchen control room at the pass. The identity turns blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops into a readable system of marks and handoffs.
 
 # Personality
+
 - observant
 - precise
 - warm under pressure
 - resourceful
 
 # Tone of voice
+
 - concrete over clever
 - calm when the room accelerates
 - specific about next actions
 - never inflated
 
 # Naming rationale
+
 gastroops keeps the domain signal visible and pairs it with a name that sounds useful in a real handoff.
 
 # Logo direction
+
 A press mark: two registration brackets clamp a single cut line, suggesting meaning becoming executable form.
 
 # Wordmark direction
+
 Compact uppercase wordmark with a deliberate gap between the domain name and its instrument suffix.
 
 # Symbol direction
+
 Offset brackets and a cut line; no sparkle, wand, robot, brain, or infinity symbol.
 
 # Color system
+
 - paper: #f3efe7 — quiet base and generous negative space
 - kiln: #171716 — ink, headings, structural anchor
 - carbon: #2b2b27 — long-form text and working surfaces
@@ -606,11 +644,13 @@ Offset brackets and a cut line; no sparkle, wand, robot, brain, or infinity symb
 - muted: #d9d0c2 — rules, paper folds, disabled context
 
 # Typography roles
+
 - display: Arial Narrow / Trebuchet MS — short high-contrast headlines and route names
 - body: Trebuchet MS / system sans-serif — explanations, labels, and instructions
 - mono: ui-monospace — metadata, measurements, command output, annotations
 
 # Spacing and shape
+
 - Use wide margins as a creative pause.
 - Align annotations to a visible route or fold.
 - Keep one working surface dominant per section.
@@ -622,21 +662,26 @@ Offset brackets and a cut line; no sparkle, wand, robot, brain, or infinity symb
 - offset underlines
 
 # Iconography and illustration
+
 Thin-line operational marks drawn from domain tools, never decorative emoji or stock icon sets.
 Editorial diagrams, plotter lines, material crops, and annotated artifacts with one focal action.
 
 # Photography and motion
+
 Honest close textures and domain objects, directional light, no staged startup desks or generic devices.
+
 - marks draw in like a plotter
 - annotations follow their anchor
 - transitions feel measured rather than bouncy
 - reduced motion leaves a clear final state
 
 # Favicon and social preview
+
 The compact press mark: two brackets around one cut line in kiln ink and coral.
 A paper title plate with a single route line crossing the mark and project name.
 
 # Usage and misuse
+
 - Use: Keep one accent color dominant.
 - Use: Pair every visual decision with a domain reason.
 - Use: Use the mark as a registration device, not a decoration.
@@ -648,8 +693,8 @@ A paper title plate with a single route line crossing the mark and project name.
 - Avoid: Do not recreate the mark as a sparkle, wand, robot, brain, or infinity loop.
 
 # Image-generation prompts
+
 - hero artwork: Tactile editorial material study for a kitchen control room at the pass; blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops; one clear focal object; photographed like a working artifact (negative: stock photo, generic SaaS UI, purple gradient, robot, floating glass)
 - meaning to blueprint illustration: A sequence of annotated marks compressing Steel worktops, kitchen tickets, station markings, and pass lighting keep the next handoff visible when service accelerates. into an executable blueprint; paper, plotter ink, registration brackets (negative: abstract blob, neon circuit board, unrelated stock imagery)
 - material study: Close crop of blackened steel, printed kitchen tickets, warm pass lighting, scratched stainless worktops arranged as domain evidence for Professional Kitchen Control Room; high contrast, honest texture (negative: 3D render, generic device mockup, glow)
 - social preview: Editorial title plate for gastroops using the a kitchen control room at the pass visual language; readable mark, paper and ink, no UI screenshot (negative: stock image, generic AI imagery, purple cloud)
-
