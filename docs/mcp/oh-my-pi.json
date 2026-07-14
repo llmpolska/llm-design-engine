@@ -3,12 +3,16 @@
     "llm-design-engine": {
       "command": "node",
       "args": ["scripts/run-mcp.mjs"],
-      "cwd": "/absolute/path/to/llm-design-engine"
+      "cwd": "/absolute/path/to/llm-design-engine",
+      "env": {
+        "LDE_PROJECT_DIR": "/absolute/path/to/target-app"
+      }
     }
   },
   "notes": [
     "The server is STDIO-only and emits protocol responses on stdout.",
     "The runner sends build output to stderr before starting the server.",
+    "Set LDE_PROJECT_DIR to the app that should own .design artifacts.",
     "Verify the host-specific config key name against your Oh My Pi release."
   ]
 }

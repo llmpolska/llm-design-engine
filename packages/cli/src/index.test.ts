@@ -58,4 +58,45 @@ describe('lde CLI workflow', () => {
       'Agent implementation instructions',
     );
   });
+
+  it('selects a creative direction by index before generation', async () => {
+    const cwd = await mkdtemp(join(tmpdir(), 'lde-select-'));
+    const output: string[] = [];
+    await runCommand(['init'], { cwd, output });
+    await runCommand(
+      [
+        'brief',
+        '--name',
+        'Field Notes',
+        '--summary',
+        'Field operations notes',
+        '--domain',
+        'field research',
+      ],
+      { cwd, output },
+    );
+    await runCommand(['directions'], { cwd, output });
+    await expect(runCommand(['select'], { cwd, output: [] })).rejects.toThrow(/--direction/);
+    await runCommand(['select', '--direction', '2'], { cwd, output });
+    const directions = await readFile(join(cwd, '.design', 'DIRECTIONS.md'), 'utf8');
+    const payloadText = directions.match(/<!-- lde-directions-data\n([\s\S]*?)\n-->/)?.[1];
+    expect(payloadText).toBeTruthy();
+    const payload: unknown = JSON.parse(payloadText ?? '{}');
+    const listed =
+      payload &&
+      typeof payload === 'object' &&
+      'directions' in payload &&
+      Array.isArray(payload.directions)
+        ? payload.directions
+        : [];
+    const statuses = listed.flatMap((direction: unknown) => {
+      if (!direction || typeof direction !== 'object' || !('status' in direction)) return [];
+      return [String(direction.status)];
+    });
+    expect(statuses.filter((status) => status === 'selected')).toHaveLength(1);
+    expect(statuses.every((status) => status === 'selected' || status === 'candidate' || status === 'approved')).toBe(
+      true,
+    );
+    expect(output.join('\n')).toContain('Selected direction');
+  });
 });

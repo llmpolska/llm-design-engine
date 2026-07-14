@@ -37,6 +37,7 @@ interface Flags {
   domain?: string;
   tension?: string;
   feedback?: string;
+  direction?: string;
   serve?: boolean;
   port?: string;
 }
@@ -178,6 +179,7 @@ function flagsFrom(argv: string[]): Flags {
     if (current === '--domain' && next) flags.domain = next;
     if (current === '--tension' && next) flags.tension = next;
     if (current === '--feedback' && next) flags.feedback = next;
+    if ((current === '--direction' || current === '--id') && next) flags.direction = next;
     if (current === '--port' && next) flags.port = next;
   }
   return flags;
@@ -209,6 +211,32 @@ function selectedDirection(directions: CreativeDirection[]): CreativeDirection {
   const first = directions[0];
   if (!first) throw new Error('No creative direction exists. Run lde directions first.');
   return first;
+}
+
+function resolveDirectionSelection(
+  directions: CreativeDirection[],
+  selector: string | undefined,
+): CreativeDirection {
+  if (!selector || selector.trim().length === 0) {
+    throw new Error(
+      'Provide --direction with a direction id, exact name, or 1-based index.',
+    );
+  }
+  const normalized = selector.trim();
+  const byId = directions.find((direction) => direction.id === normalized);
+  if (byId) return byId;
+  const byName = directions.find(
+    (direction) => direction.name.toLowerCase() === normalized.toLowerCase(),
+  );
+  if (byName) return byName;
+  const asIndex = Number(normalized);
+  if (Number.isInteger(asIndex) && asIndex >= 1 && asIndex <= directions.length) {
+    const match = directions[asIndex - 1];
+    if (match) return match;
+  }
+  throw new Error(
+    `Unknown direction "${normalized}". Use a direction id, exact name, or 1-based index.`,
+  );
 }
 
 async function requireDesign(cwd: string): Promise<DesignDocument> {
@@ -326,6 +354,26 @@ export async function runCommand(argv: string[], context: CommandContext): Promi
     context.output.push(`Generated ${directions.length} creative directions`);
     return;
   }
+  if (command === 'select') {
+    const brief = await requireBrief(context.cwd);
+    const state = await requireDirections(context.cwd);
+    const chosen = resolveDirectionSelection(state.directions, flags.direction);
+    const directions = state.directions.map((direction) => ({
+      ...direction,
+      status:
+        direction.id === chosen.id
+          ? ('selected' as const)
+          : direction.status === 'selected'
+            ? ('candidate' as const)
+            : direction.status,
+    }));
+    await writeFile(
+      join(root, 'DIRECTIONS.md'),
+      directionsMarkdown(brief, state.interpretation, directions),
+    );
+    context.output.push(`Selected direction ${chosen.name} (${chosen.id})`);
+    return;
+  }
   if (command === 'generate') {
     await ensureDesignWorkspace(context.cwd);
     const { directions } = await requireDirections(context.cwd);
@@ -429,7 +477,7 @@ export async function runCommand(argv: string[], context: CommandContext): Promi
     return;
   }
   context.output.push(
-    'Commands: init, brief, directions, generate, preview, refine, approve, brandkit, lint, export',
+    'Commands: init, brief, directions, select, generate, preview, refine, approve, brandkit, lint, export',
   );
 }
 
@@ -461,6 +509,7 @@ export function createProgram(context: CommandContext): Command {
     'init',
     'brief',
     'directions',
+    'select',
     'generate',
     'preview',
     'refine',
@@ -478,6 +527,7 @@ export function createProgram(context: CommandContext): Command {
         .option('--domain <domain>')
         .option('--tension <tension>');
     if (name === 'refine') command.option('--feedback <feedback>');
+    if (name === 'select') command.option('--direction <direction>').option('--id <id>');
     if (name === 'preview') command.option('--serve').option('--port <port>');
     command.action(async (...args: unknown[]) => {
       const commandOptions = args.at(-1) as Record<string, unknown>;

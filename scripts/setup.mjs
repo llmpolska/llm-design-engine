@@ -76,12 +76,12 @@ export async function main({ cwd = process.cwd() } = {}) {
   process.stdout.write(`
 Setup complete.
 
-Studio:  pnpm --filter @llm-design-engine/studio dev
-         http://127.0.0.1:4174
-Website: pnpm --filter @llm-design-engine/website dev
-         http://127.0.0.1:4173
-CLI:     pnpm lde -- --help
-Tests:   pnpm test
+MCP:    pnpm mcp
+        configure docs/mcp/*.json in your coding agent
+CLI:    pnpm lde -- --help
+Docs:   docs/mcp/README.md
+Tests:  pnpm test
+        pnpm test:mcp
 `);
 }
 

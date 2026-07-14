@@ -4,7 +4,10 @@
       "type": "local",
       "command": ["node", "scripts/run-mcp.mjs"],
       "enabled": true,
-      "cwd": "/absolute/path/to/llm-design-engine"
+      "cwd": "/absolute/path/to/llm-design-engine",
+      "environment": {
+        "LDE_PROJECT_DIR": "/absolute/path/to/target-app"
+      }
     }
   }
 }

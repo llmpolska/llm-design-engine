@@ -9,13 +9,15 @@ test('README exposes a truthful public onboarding path', async () => {
   assert.match(readme, /Node\.js 22\+ and pnpm 10\.x/);
   assert.match(readme, /pnpm run setup/);
   assert.match(readme, /pnpm install --frozen-lockfile/);
-  assert.match(readme, /Studio GUI/);
+  assert.match(readme, /pnpm mcp/);
   assert.match(readme, /CLI/);
   assert.match(readme, /MCP/);
   assert.match(readme, /deterministic local\/mock/i);
   assert.match(readme, /provider-backed/i);
+  assert.match(readme, /docs\/mcp\/README\.md/);
   assert.doesNotMatch(readme, /\.\.\/\.\.\/packages\/cli/);
   assert.doesNotMatch(readme, /\npnpm setup\n/);
+  assert.doesNotMatch(readme, /## Studio GUI/);
 });
 
 test('setup script validates runtimes and orders frozen installation before build', async () => {
@@ -43,4 +45,25 @@ test('setup script validates runtimes and orders frozen installation before buil
   assert.equal(typeof exitCodeFor, 'function');
   assert.equal(exitCodeFor({ exitCode: 42 }), 42);
   assert.equal(exitCodeFor(new Error('no exit code')), 1);
+
+  const script = await readFile(scriptUrl, 'utf8');
+  assert.match(script, /pnpm mcp/);
+  assert.match(script, /docs\/mcp\/README\.md/);
+});
+
+test('MCP docs and configs exist for supported agents', async () => {
+  const files = [
+    '../docs/mcp/README.md',
+    '../docs/mcp/claude-code.json',
+    '../docs/mcp/codex.json',
+    '../docs/mcp/opencode.json',
+    '../docs/mcp/oh-my-pi.json',
+  ];
+  for (const file of files) {
+    await access(new URL(file, import.meta.url));
+  }
+  const guide = await readFile(new URL('../docs/mcp/README.md', import.meta.url), 'utf8');
+  assert.match(guide, /lde_select/);
+  assert.match(guide, /lde:\/\/artifact\//);
+  assert.match(guide, /design_workflow/);
 });

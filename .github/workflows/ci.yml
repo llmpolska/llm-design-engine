@@ -26,5 +26,6 @@ jobs:
       - run: ./node_modules/.bin/eslint .
       - run: pnpm build
       - run: pnpm test
+      - run: pnpm test:mcp
       - run: pnpm test:e2e
       - run: pnpm screenshots

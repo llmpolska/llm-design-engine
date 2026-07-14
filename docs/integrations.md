@@ -1,18 +1,48 @@
 # Integrations
 
-`lde export` writes a compact Markdown package that can be handed to Codex, Claude Code, OpenCode, Oh My Pi, or another coding agent.
+LLM Design Engine integrates with coding agents through two first-class surfaces:
 
-## Codex / Claude Code / OpenCode
+1. **MCP** — live tools, resources, and prompts over STDIO
+2. **EXPORT.md** — a portable Markdown package written by `lde export` / `lde_export`
 
-Paste `.design/EXPORT.md` at the start of an implementation task. Keep the approved design document, brandkit, and lint report in the same workspace. Ask the agent to cite the relevant section before changing a component.
+## MCP
 
-## Oh My Pi
+The STDIO MCP server is the preferred agent interface.
 
-Use the export as a local artifact reference and keep `AGENTS.md` in the repository root. The package boundaries and provider seams are explicit so a subagent can work on one stage without inventing a parallel schema.
+```bash
+pnpm mcp
+```
+
+Configuration examples:
+
+- [`docs/mcp/claude-code.json`](mcp/claude-code.json)
+- [`docs/mcp/codex.json`](mcp/codex.json)
+- [`docs/mcp/opencode.json`](mcp/opencode.json)
+- [`docs/mcp/oh-my-pi.json`](mcp/oh-my-pi.json)
+
+Capability surface:
+
+- **Tools** for the full design workflow, including `lde_select`, `lde_status`, and `lde_read_artifact`
+- **Resources** under `lde://artifact/*` for the current `.design` tree
+- **Prompts** for `design_workflow`, `design_brief`, and `refine_design`
+
+Full reference: [`docs/mcp/README.md`](mcp/README.md)
+
+Set `LDE_PROJECT_DIR` when the target app is not the server cwd. Tools still accept an explicit `projectDir`.
+
+## Codex / Claude Code / OpenCode / Oh My Pi
+
+1. Configure the MCP server from the examples above.
+2. Run the design workflow until `lde_export` succeeds.
+3. Read `EXPORT.md` or the resource `lde://artifact/EXPORT.md`.
+4. Keep the approved design document, brandkit, and lint report in the same workspace.
+5. Ask the agent to cite the relevant section before changing a component.
+
+If you cannot run MCP, paste `.design/EXPORT.md` at the start of an implementation task.
 
 ## Local API
 
-The CLI package exposes a Hono app for a local adapter:
+The CLI package exposes a Hono app for local adapters and future review surfaces:
 
 ```ts
 import { createApiApp } from '@llm-design-engine/cli';
@@ -21,8 +51,4 @@ import { serve } from '@hono/node-server';
 serve(createApiApp(process.cwd()), { port: 4318 });
 ```
 
-Routes include `/api/manifest`, `/api/design`, and `/api/brandkit`. The Vue studio can replace its fixture state with these routes without changing its view contracts.
-
-## MCP
-
-An MCP server is not required by the MVP. A future integration can expose the same JSON-safe design AST and artifact manifest as read-only resources, preserving the local-file source of truth.
+Routes include `/api/manifest`, `/api/design`, and `/api/brandkit`. This is an optional adapter seam, not the public agent path.

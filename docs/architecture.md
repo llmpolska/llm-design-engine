@@ -6,7 +6,7 @@ LLM Design Engine is a TypeScript monorepo with one stable artifact contract and
 Project files (.design)
         │
         ▼
-CLI / Hono local API ─── Vue Studio
+MCP STDIO server / CLI ─── local API adapter
         │
         ▼
 creative-director → design-format → core AST
@@ -25,13 +25,19 @@ creative-director → design-format → core AST
 - `brandkit` derives identity assets from a direction.
 - `image-provider` is optional and provenance-first.
 - `anti-slop` is deterministic and does not rewrite files.
-- `cli` is the only package that orchestrates filesystem artifacts and local servers.
-- `apps/website` uses curated local fixture content for its public story.
-- `apps/studio` uses local fixture state with an API seam.
+- `cli` orchestrates filesystem artifacts and local servers.
+- `mcp` exposes the same CLI workflow over STDIO tools, plus resources and prompts.
+- `apps/website` and `apps/studio` remain in the monorepo as internal/review surfaces and are not part of the public agent path.
 
 ## Why JSON-safe AST
 
 JSON-safe nodes make provider output testable, previews repeatable, and exports portable. Markdown remains the review surface; JSON is the compiler boundary.
+
+## MCP surface
+
+- Tools write or inspect `.design` artifacts and return structured JSON plus text content.
+- Resources mirror the current project `.design` tree under `lde://artifact/*`.
+- Prompts encode the preferred design-before-code sequence for coding agents.
 
 ## Future extension points
 

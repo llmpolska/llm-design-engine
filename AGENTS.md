@@ -44,7 +44,7 @@ Before completion run `./node_modules/.bin/eslint .`, `pnpm typecheck`, `pnpm te
 
 ## UI quality
 
-Choose a visual metaphor from the product domain before writing components. Every major composition needs a focal point, responsive rules, a typography role, material language, motion direction, and forbidden patterns. The public site and studio must remain usable on a narrow mobile viewport, expose visible focus states, honor reduced motion, and avoid horizontal overflow.
+Choose a visual metaphor from the product domain before writing components. Every major composition needs a focal point, responsive rules, a typography role, material language, motion direction, and forbidden patterns. Any public site or studio surface must remain usable on a narrow mobile viewport, expose visible focus states, honor reduced motion, and avoid horizontal overflow. The public agent path is MCP + CLI + `.design` artifacts.
 
 ## Verification
 
