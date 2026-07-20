@@ -37,6 +37,6 @@
     "@llm-design-engine/renderer": "workspace:*",
     "@llm-design-engine/shared": "workspace:*",
     "commander": "^14.0.0",
-    "hono": "^4.7.11"
+    "hono": "^4.12.31"
   }
 }
