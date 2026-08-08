@@ -254,6 +254,6 @@ Read [`CONTRIBUTING.md`](CONTRIBUTING.md), follow [`AGENTS.md`](AGENTS.md), and 
 
 ## License and attribution
 
-MIT licensed. Built and maintained by [LLMPolska](https://github.com/llmpolska).
+MIT licensed. Built and maintained by [LLMPolska](https://github.com/llmpolska). Our website: [llmpolska.pl](https://llmpolska.pl)
 
 Repository topics: `ai`, `design`, `frontend`, `coding-agents`, `mcp`, `typescript`, `design-system`, `generative-ai`, `developer-tools`.
