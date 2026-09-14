@@ -20,6 +20,6 @@
     "@llm-design-engine/shared": "workspace:*"
   },
   "devDependencies": {
-    "playwright": "^1.53.1"
+    "playwright": "^1.63.0"
   }
 }
